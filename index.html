@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nimbus Aesthetics — Certified Aesthetic Injector · San Antonio, TX</title>
+<meta name="description" content="Precision neurotoxin injections across all facial regions. Book your consultation with a certified aesthetic injector in San Antonio, TX.">
+
+<!-- ══ SECURITY HEADERS ══════════════════════════════════ -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src https://rqytpqaswofdwhmsaykn.supabase.co; frame-ancestors 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+<meta name="robots" content="index, follow">
+
+<!-- ══ OPEN GRAPH ═════════════════════════════════════════ -->
+<meta property="og:title" content="Nimbus Aesthetics — Certified Aesthetic Injector">
+<meta property="og:description" content="Precision neurotoxin treatments across all facial regions. San Antonio, TX.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nimbus.emberlineworld.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+<style>
+/* ══ RESET ═══════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ══ DJ'S BRAND PALETTE — Turquoise + Gold ═══════════════ */
+:root{
+  /* Backgrounds — deep teal-black */
+  --obsidian:#040E0D;
+  --deep:#071210;
+  --velvet:#0A1816;
+  --glass:rgba(7,18,16,0.85);
+  --border:rgba(11,191,184,0.14);
+  --border-l:rgba(11,191,184,0.32);
+
+  /* Text */
+  --t1:#F0FAF9;
+  --t2:#C8E8E4;
+  --t3:#7ABAB5;
+  --t4:rgba(122,186,181,0.5);
+
+  /* Turquoise — primary brand */
+  --teal:#0BBFB8;
+  --teal-l:#40DDD6;
+  --teal-d:#078880;
+  --teal-border:rgba(11,191,184,0.25);
+
+  /* Gold — accent */
+  --gold:#D4A850;
+  --gold-l:#E8C870;
+  --gold-d:#A8842C;
+  --gold-border:rgba(212,168,80,0.25);
+
+  /* Supporting */
+  --champagne:#F0E8C8;
+  --nav-h:72px;
+}
+
+html{scroll-behavior:smooth}
+body{background:var(--obsidian);color:var(--t2);font-family:'Cormorant Garamond',serif;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+h1,h2,h3,h4{font-family:'Cinzel',serif;color:var(--t1);line-height:1.2;letter-spacing:.05em}
+.display{font-family:'Cinzel Decorative',serif}
+p{line-height:1.8;font-weight:300}
+a{color:inherit;text-decoration:none}
+button{cursor:none;font-family:'DM Sans',sans-serif}
+input,textarea,select{font-family:'Cormorant Garamond',serif;cursor:none}
+
+/* ══ 3D CANVAS ═══════════════════════════════════════════ */
+#cosmos{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* ══ GRAIN TEXTURE ═══════════════════════════════════════ */
+#grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat:repeat;background-size:200px 200px;mix-blend-mode:overlay}
+
+/* ══ CURSOR — Turquoise ══════════════════════════════════ */
+#cdot{position:fixed;z-index:9999;width:6px;height:6px;background:var(--teal);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);box-shadow:0 0 10px rgba(11,191,184,0.7)}
+#cring{position:fixed;z-index:9998;width:32px;height:32px;border:1px solid rgba(11,191,184,0.38);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .25s}
+
+/* ══ NAV ════════════════════════════════════════════════ */
+#nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:800;
+  background:rgba(4,14,13,0.9);backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;padding:0 3rem;justify-content:space-between}
+.nav-logo{display:flex;flex-direction:column;align-items:center;gap:.1rem}
+.nav-logo .wordmark{font-family:'Cinzel Decorative',serif;font-size:.95rem;color:var(--t1);letter-spacing:.18em}
+.nav-logo .tagline{font-family:'Cormorant Garamond',serif;font-size:.65rem;color:var(--teal);letter-spacing:.25em;text-transform:uppercase;font-style:italic}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-links a{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--t3);transition:color .3s}
+.nav-links a:hover{color:var(--teal)}
+.nav-ctas{display:flex;gap:.75rem;align-items:center}
+.nav-consult{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);background:transparent;padding:.48rem 1.1rem;border-radius:1px;border:1px solid var(--teal-border);transition:all .3s}
+.nav-consult:hover{background:rgba(11,191,184,0.08);border-color:var(--teal)}
+.nav-book{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--obsidian);background:linear-gradient(135deg,var(--teal-d),var(--teal),var(--teal-l));padding:.5rem 1.25rem;border-radius:1px;border:none;transition:all .3s}
+.nav-book:hover{box-shadow:0 4px 20px rgba(11,191,184,0.35);transform:translateY(-1px)}
+
+/* ══ HERO ═══════════════════════════════════════════════ */
+#hero{position:relative;z-index:2;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:calc(var(--nav-h) + 4rem) 2rem 4rem}
+.hero-inner{max-width:780px}
+.hero-ornament{display:flex;align-items:center;gap:1.5rem;justify-content:center;margin-bottom:2rem}
+.ornament-line{flex:1;max-width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--teal))}
+.ornament-line.r{background:linear-gradient(90deg,var(--teal),transparent)}
+.ornament-diamond{width:6px;height:6px;background:var(--teal);transform:rotate(45deg)}
+.hero-sub-label{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem;opacity:.9}
+.hero-title{font-family:'Cinzel Decorative',serif;font-size:clamp(2.2rem,5vw,4.2rem);font-weight:400;color:var(--t1);margin-bottom:.75rem;line-height:1.15;letter-spacing:.06em}
+.hero-title em{font-style:italic;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.12em;font-weight:300;display:block;letter-spacing:.04em}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--t3);line-height:1.75;margin-bottom:2.75rem;font-style:italic;font-weight:300}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* Primary: consultation on-site */
+.btn-teal{display:inline-flex;align-items:center;gap:.5rem;padding:.88rem 2.5rem;background:linear-gradient(135deg,var(--teal-d),var(--teal),var(--teal-l));color:#000;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;border:none;border-radius:1px;transition:all .3s;position:relative;overflow:hidden}
+.btn-teal::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,0.12),transparent);opacity:0;transition:opacity .3s}
+.btn-teal:hover::after{opacity:1}
+.btn-teal:hover{box-shadow:0 6px 30px rgba(11,191,184,0.4);transform:translateY(-1px)}
+
+/* Secondary: direct to MySpaLive booking */
+.btn-gold-outline{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2.5rem;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--gold-border);border-radius:1px;transition:all .3s}
+.btn-gold-outline:hover{background:rgba(212,168,80,0.07);border-color:var(--gold);transform:translateY(-1px)}
+
+.btn-full{width:100%;justify-content:center}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.scroll-text{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:var(--t4)}
+.scroll-line{width:1px;height:40px;background:linear-gradient(180deg,var(--teal),transparent);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+/* ══ SECTIONS ════════════════════════════════════════════ */
+.section{position:relative;z-index:2;padding:6rem 3rem;max-width:1200px;margin:0 auto}
+.section-label{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
+.section-label::before{content:'';display:inline-block;width:24px;height:1px;background:var(--teal)}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:1rem;font-weight:400}
+.section-title em{font-style:italic;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.1em;font-weight:300}
+.section-sub{font-size:1.1rem;color:var(--t3);max-width:560px;line-height:1.8;font-style:italic}
+
+/* ══ DIVIDER ════════════════════════════════════════════ */
+.divider{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;padding:0 3rem;gap:1.5rem;margin:.5rem 0}
+.div-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--border-l),transparent)}
+.div-glyph{font-family:'Cinzel Decorative',serif;font-size:.7rem;color:var(--teal);opacity:.5;letter-spacing:.2em}
+
+/* ══ SERVICES GRID ═══════════════════════════════════════ */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.svc-card{background:var(--glass);border:1px solid var(--border);border-radius:2px;padding:2.25rem 2rem;backdrop-filter:blur(20px);position:relative;overflow:hidden;transition:all .4s}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent);opacity:0;transition:opacity .4s}
+.svc-card::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(11,191,184,0.05),transparent 70%);opacity:0;transition:opacity .4s}
+.svc-card:hover{border-color:var(--teal-border);transform:translateY(-4px)}
+.svc-card:hover::before,.svc-card:hover::after{opacity:1}
+.svc-number{font-family:'Cinzel Decorative',serif;font-size:.62rem;color:var(--teal);letter-spacing:.2em;margin-bottom:1.1rem;opacity:.65}
+.svc-name{font-family:'Cinzel',serif;font-size:1rem;color:var(--t1);margin-bottom:.7rem;letter-spacing:.08em}
+.svc-desc{font-size:.95rem;color:var(--t3);line-height:1.75;font-style:italic}
+.svc-tag{display:inline-block;margin-top:1.1rem;font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);border:1px solid var(--teal-border);padding:.2rem .65rem;border-radius:1px}
+.svc-tag.gold{color:var(--gold);border-color:var(--gold-border)}
+
+/* ══ PHILOSOPHY STRIP ════════════════════════════════════ */
+#philosophy{position:relative;z-index:2;background:linear-gradient(135deg,rgba(7,18,16,0.97),rgba(4,14,13,0.97));border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.phil-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.phil-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.3vw,1.9rem);font-style:italic;color:var(--t1);line-height:1.65;position:relative;padding-left:2rem}
+.phil-quote::before{content:'"';position:absolute;left:0;top:-.25rem;font-size:4rem;color:var(--teal);opacity:.2;font-family:'Cinzel Decorative',serif;line-height:1}
+.phil-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.stat-box{border:1px solid var(--border);padding:1.6rem;text-align:center;background:rgba(4,14,13,0.6)}
+.stat-val{font-family:'Cinzel Decorative',serif;font-size:2rem;color:var(--teal);line-height:1}
+.stat-label{font-family:'DM Sans',sans-serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t4);margin-top:.45rem}
+
+/* ══ ABOUT ════════════════════════════════════════════════ */
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center;margin-top:3rem}
+.about-visual{position:relative;aspect-ratio:.78;background:linear-gradient(135deg,rgba(11,191,184,0.06),rgba(212,168,80,0.04));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.about-monogram{font-family:'Cinzel Decorative',serif;font-size:6rem;color:var(--teal);opacity:.08;line-height:1;user-select:none}
+.about-deco{position:absolute;inset:0;pointer-events:none}
+.about-visual-text{position:absolute;bottom:1.75rem;left:0;right:0;text-align:center}
+.about-visual-text span{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--teal);opacity:.6}
+.bio{font-size:1.08rem;color:var(--t2);line-height:1.9;margin-bottom:1.4rem}
+.credentials{display:flex;flex-direction:column;gap:.7rem;margin-top:2rem}
+.cred{display:flex;align-items:center;gap:.75rem;font-family:'DM Sans',sans-serif;font-size:.78rem;color:var(--t3);letter-spacing:.03em}
+.cred-dot{width:4px;height:4px;border-radius:50%;background:var(--teal);flex-shrink:0}
+
+/* ══ CONSULT / BOOKING SPLIT ══════════════════════════════ */
+#book{position:relative;z-index:2;background:var(--velvet);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.book-split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.book-panel{padding:4rem 3rem}
+.book-panel.consult{border-right:1px solid var(--border)}
+.book-panel.booking{background:rgba(11,191,184,0.03)}
+.book-panel-icon{width:40px;height:40px;border:1px solid var(--teal-border);border-radius:2px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.book-panel h3{font-family:'Cinzel',serif;font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;color:var(--t1)}
+.book-panel p{font-size:.95rem;color:var(--t3);font-style:italic;line-height:1.8;margin-bottom:1.75rem}
+
+/* ══ CONTACT FORM ════════════════════════════════════════ */
+#contact{position:relative;z-index:2;background:var(--deep);border-top:1px solid var(--border)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:5rem}
+.ci-item{display:flex;flex-direction:column;gap:.25rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.ci-item:last-child{border-bottom:none}
+.ci-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+.ci-val{font-size:1rem;color:var(--t2);font-style:italic}
+.contact-form-wrap{background:rgba(4,14,13,0.7);border:1px solid var(--border);padding:2.5rem;backdrop-filter:blur(20px);position:relative;overflow:hidden}
+.contact-form-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent)}
+.form-title{font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:.1em;color:var(--t1);margin-bottom:.35rem}
+.form-sub{font-size:.9rem;color:var(--t4);font-style:italic;margin-bottom:2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.field{display:flex;flex-direction:column;gap:.38rem;margin-bottom:.9rem}
+.field label{font-family:'Cinzel',serif;font-size:.57rem;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);opacity:.8}
+.field input,.field select,.field textarea{background:rgba(4,14,13,0.85);border:1px solid var(--border);border-radius:1px;padding:.7rem 1rem;font-size:.95rem;color:var(--t2);outline:none;transition:border-color .3s;font-family:'Cormorant Garamond',serif;font-style:italic;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(11,191,184,0.4)}
+.field input::placeholder,.field textarea::placeholder{color:var(--t4)}
+.field select{-webkit-appearance:none;appearance:none}
+.field select option{background:var(--deep)}
+.form-msg{padding:.65rem .85rem;border-radius:1px;font-size:.82rem;margin-bottom:1rem;display:none;font-family:'DM Sans',sans-serif;letter-spacing:.02em}
+.form-msg.success{background:rgba(11,191,184,0.08);border:1px solid rgba(11,191,184,0.3);color:var(--teal);display:block}
+.form-msg.error{background:rgba(212,80,80,0.08);border:1px solid rgba(212,80,80,0.3);color:#E88080;display:block}
+
+/* ══ FOOTER ══════════════════════════════════════════════ */
+footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft-brand{font-family:'Cinzel Decorative',serif;font-size:.72rem;color:var(--teal);opacity:.7;letter-spacing:.15em}
+.ft-copy{font-family:'DM Sans',sans-serif;font-size:.68rem;color:var(--t4);letter-spacing:.05em}
+
+/* ══ FLOATING BUTTONS ════════════════════════════════════ */
+.float-wrap{position:fixed;right:1.75rem;bottom:1.75rem;z-index:700;display:flex;flex-direction:column;gap:.5rem;align-items:flex-end}
+.float-btn{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.6rem 1.1rem;border-radius:1px;border:none;display:flex;align-items:center;gap:.4rem;transition:all .3s;white-space:nowrap}
+.float-btn.primary{background:linear-gradient(135deg,var(--teal-d),var(--teal));color:#000;box-shadow:0 4px 20px rgba(11,191,184,0.3)}
+.float-btn.secondary{background:rgba(212,168,80,0.12);color:var(--gold);border:1px solid var(--gold-border)}
+.float-btn:hover{transform:translateY(-2px)}
+.float-btn.primary:hover{box-shadow:0 6px 28px rgba(11,191,184,0.5)}
+
+/* ══ ANIMATIONS ══════════════════════════════════════════ */
+.fade-up{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(11,191,184,0.2);border-radius:2px}
+::-webkit-scrollbar-thumb:hover{background:rgba(11,191,184,0.4)}
+
+/* ══ RESPONSIVE ══════════════════════════════════════════ */
+@media(max-width:900px){
+  .services-grid,.phil-inner,.about-grid,.contact-grid,.book-split{grid-template-columns:1fr;gap:2.5rem}
+  .book-panel.consult{border-right:none;border-bottom:1px solid var(--border)}
+  .nav-links,.nav-ctas{display:none}
+  .section,.book-panel{padding:3.5rem 1.5rem}
+  #nav{padding:0 1.5rem}
+  .form-row{grid-template-columns:1fr}
+  .nav-consult,.nav-book{display:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="cosmos"></canvas>
+<div id="grain"></div>
+<div id="cdot"></div>
+<div id="cring"></div>
+
+<!-- Floating CTAs — split: consult vs book -->
+<div class="float-wrap">
+  <a href="https://app.myspalive.com/#/profile/DonithaLittlejohm" target="_blank" rel="noopener noreferrer" class="float-btn secondary">
+    <svg width="9" height="9" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+    Book Now
+  </a>
+  <a href="#contact" class="float-btn primary">
+    <svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M1 6.5L4.5 10L11 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Free Consultation
+  </a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <span class="wordmark">Nimbus</span>
+    <span class="tagline">Aesthetics</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Inquire</a></li>
+  </ul>
+  <div class="nav-ctas">
+    <a href="#contact" class="nav-consult">Free Consultation</a>
+    <a href="https://app.myspalive.com/#/profile/DonithaLittlejohm" target="_blank" rel="noopener noreferrer" class="nav-book">Book Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner fade-up">
+    <div class="hero-ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-diamond"></div>
+      <div class="ornament-line r"></div>
+    </div>
+    <div class="hero-sub-label">Certified Aesthetic Injector · San Antonio, TX</div>
+    <h1 class="hero-title display">
+      Your Beauty,
+      <em>Elevated with Precision</em>
+    </h1>
+    <p class="hero-tagline">You deserve results that look like the best version of you —<br>not someone else. Let's start with a conversation.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-teal">Start with a Free Consultation</a>
+      <a href="https://app.myspalive.com/#/profile/DonithaLittlejohm" target="_blank" rel="noopener noreferrer" class="btn-gold-outline">Book via My Spa Live →</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="scroll-text">Explore</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="divider"><div class="div-line"></div><span class="div-glyph">✦ N ✦</span><div class="div-line"></div></div>
+
+<!-- SERVICES -->
+<div class="section" id="services">
+  <div class="section-label fade-up">What I Offer</div>
+  <h2 class="section-title fade-up">Every face is <em>one of a kind.</em><br>Every treatment is, too.</h2>
+  <p class="section-sub fade-up">I specialize in neurotoxin injections across all facial regions — with results that enhance who you are, never erase it.</p>
+
+  <div class="services-grid">
+    <div class="svc-card fade-up">
+      <div class="svc-number">01</div>
+      <div class="svc-name">Neurotoxin · Forehead</div>
+      <p class="svc-desc">Smooth horizontal lines and soften the elevens between your brows. Natural movement preserved — frozen is never the goal.</p>
+      <span class="svc-tag">Signature</span>
+    </div>
+    <div class="svc-card fade-up">
+      <div class="svc-number">02</div>
+      <div class="svc-name">Crow's Feet · Eye Region</div>
+      <p class="svc-desc">Delicate precision around the orbital region — softening expression lines while keeping the warmth in your smile.</p>
+      <span class="svc-tag">Precision</span>
+    </div>
+    <div class="svc-card fade-up">
+      <div class="svc-number">03</div>
+      <div class="svc-name">Brow Lift · Arch Define</div>
+      <p class="svc-desc">Strategic placement to lift and define your brow arch — opening the eye, restoring height without anything invasive.</p>
+      <span class="svc-tag">Sculpting</span>
+    </div>
+    <div class="svc-card fade-up">
+      <div class="svc-number">04</div>
+      <div class="svc-name">Lower Face · Jaw & Neck</div>
+      <p class="svc-desc">Masseter slimming, platysmal band smoothing, and Nefertiti lift for jaw contouring and neck refinement that turns heads.</p>
+      <span class="svc-tag">Contouring</span>
+    </div>
+    <div class="svc-card fade-up">
+      <div class="svc-number">05</div>
+      <div class="svc-name">Lip Flip & Perioral</div>
+      <p class="svc-desc">A subtle curl and perioral line treatment — volume without filler. The kind of result people notice but can't quite place.</p>
+      <span class="svc-tag">Lip Enhancement</span>
+    </div>
+    <div class="svc-card fade-up">
+      <div class="svc-number">06</div>
+      <div class="svc-name">Coming Soon</div>
+      <p class="svc-desc">Expanding into dermal fillers, PRP, and advanced skincare protocols. Join the waitlist and be first to know when new services launch.</p>
+      <span class="svc-tag gold" style="cursor:none" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Join the Waitlist →</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><div class="div-line"></div><span class="div-glyph">◆</span><div class="div-line"></div></div>
+
+<!-- PHILOSOPHY -->
+<div id="philosophy">
+  <div class="section">
+    <div class="phil-inner">
+      <div>
+        <div class="section-label fade-up">My Approach</div>
+        <h2 class="section-title fade-up">I treat you like a<br><em>person, not a patient.</em></h2>
+        <p class="phil-quote fade-up" style="margin-top:2rem">
+          "Every face I work with tells a story. I'm not here to rewrite it — I'm here to help you tell it with more confidence, clarity, and grace."
+        </p>
+      </div>
+      <div class="phil-stats fade-up">
+        <div class="stat-box">
+          <div class="stat-val">All</div>
+          <div class="stat-label">Facial Regions</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">0</div>
+          <div class="stat-label">Cookie-Cutter Results</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">1:1</div>
+          <div class="stat-label">Personal Attention</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">You</div>
+          <div class="stat-label">Always the Standard</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><div class="div-line"></div><span class="div-glyph">✦ N ✦</span><div class="div-line"></div></div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <div class="about-grid">
+    <div class="about-visual fade-up">
+      <div class="about-monogram">N</div>
+      <svg class="about-deco" viewBox="0 0 300 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="10" width="280" height="370" stroke="#0BBFB8" stroke-width=".4" stroke-dasharray="3 9" opacity=".2"/>
+        <circle cx="150" cy="195" r="90" stroke="#0BBFB8" stroke-width=".3" opacity=".1"/>
+        <path d="M28 28 L52 28 M28 28 L28 52" stroke="#D4A850" stroke-width=".8" opacity=".4"/>
+        <path d="M272 28 L248 28 M272 28 L272 52" stroke="#D4A850" stroke-width=".8" opacity=".4"/>
+        <path d="M28 362 L52 362 M28 362 L28 338" stroke="#D4A850" stroke-width=".8" opacity=".4"/>
+        <path d="M272 362 L248 362 M272 362 L272 338" stroke="#D4A850" stroke-width=".8" opacity=".4"/>
+      </svg>
+      <div class="about-visual-text"><span>Nimbus Aesthetics · San Antonio</span></div>
+    </div>
+    <div>
+      <div class="section-label fade-up">About Me</div>
+      <h2 class="section-title fade-up">Your best friend<br>who happens to be <em>certified.</em></h2>
+      <p class="bio fade-up" style="margin-top:1.5rem">I started Nimbus because I believe aesthetic care should feel like a conversation — not a transaction. When you sit down with me, you're not getting a template. You're getting someone who genuinely listens to what you want, asks the right questions, and doesn't touch a syringe until we're both confident about the plan.</p>
+      <p class="bio fade-up">My specialty is neurotoxin across all facial regions — and I take pride in results that look like you on your very best day. I'm based in San Antonio and growing fast. I'd love for you to be part of this journey.</p>
+      <div class="credentials fade-up">
+        <div class="cred"><span class="cred-dot"></span>Certified Aesthetic Injector</div>
+        <div class="cred"><span class="cred-dot"></span>Neurotoxin Specialist — All Facial Regions</div>
+        <div class="cred"><span class="cred-dot"></span>My Spa Live Certified Partner</div>
+        <div class="cred"><span class="cred-dot"></span>San Antonio, Texas · Expanding Soon</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><div class="div-line"></div><span class="div-glyph">◆</span><div class="div-line"></div></div>
+
+<!-- BOOK / CONSULT SPLIT -->
+<div id="book">
+  <div class="book-split" style="max-width:1200px;margin:0 auto">
+    <div class="book-panel consult fade-up">
+      <div class="book-panel-icon">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2z" stroke="var(--teal)" stroke-width="1.3"/><path d="M10 6v4l3 3" stroke="var(--teal)" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Free Consultation</h3>
+      <p>Not sure where to start? Tell me your goals, your concerns, and what you've tried before. I'll give you an honest answer — no pressure, no upsell. Just a real conversation about what's right for you.</p>
+      <a href="#contact" class="btn-teal">Start the Conversation →</a>
+    </div>
+    <div class="book-panel booking fade-up">
+      <div class="book-panel-icon" style="border-color:var(--gold-border)">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="15" rx="1.5" stroke="var(--gold)" stroke-width="1.3"/><path d="M6 1v3M14 1v3M2 7h16" stroke="var(--gold)" stroke-width="1.3" stroke-linecap="round"/><path d="M6 11h2M10 11h2M6 14h2" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </div>
+      <h3 style="color:var(--gold)">Ready to Book?</h3>
+      <p>Already know what you want? Skip the form and book directly through My Spa Live. Choose your treatment, select your time, and I'll see you there.</p>
+      <a href="https://app.myspalive.com/#/profile/DonithaLittlejohm" target="_blank" rel="noopener noreferrer" class="btn-gold-outline">Book via My Spa Live →</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT FORM -->
+<div id="contact">
+  <div class="section">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label fade-up">Get in Touch</div>
+        <h2 class="section-title fade-up">Let's talk about<br><em>your goals.</em></h2>
+        <p style="font-size:1rem;color:var(--t3);font-style:italic;line-height:1.8;margin:1.5rem 0 2.5rem" class="fade-up">Whether this is your first time considering injectables or you're looking for someone who truly listens — I want to hear from you. I respond personally within 24 hours.</p>
+        <div class="fade-up">
+          <div class="ci-item"><span class="ci-label">Location</span><span class="ci-val">San Antonio, Texas</span></div>
+          <div class="ci-item"><span class="ci-label">Booking Platform</span><span class="ci-val">My Spa Live — book at your convenience</span></div>
+          <div class="ci-item"><span class="ci-label">Response Time</span><span class="ci-val">Within 24 hours, personally</span></div>
+        </div>
+      </div>
+      <div class="contact-form-wrap fade-up">
+        <div class="form-title">Send a Message</div>
+        <div class="form-sub">I'll be in touch soon.</div>
+        <div id="form-msg" class="form-msg"></div>
+        <div class="form-row">
+          <div class="field"><label>First Name</label><input type="text" id="f-fname" placeholder="Your first name" autocomplete="given-name"></div>
+          <div class="field"><label>Last Name</label><input type="text" id="f-lname" placeholder="Your last name" autocomplete="family-name"></div>
+        </div>
+        <div class="field"><label>Email Address</label><input type="email" id="f-email" placeholder="your@email.com" autocomplete="email"></div>
+        <div class="field"><label>Phone (Optional)</label><input type="tel" id="f-phone" placeholder="(210) 000-0000" autocomplete="tel"></div>
+        <div class="field">
+          <label>What brings you here?</label>
+          <select id="f-service">
+            <option value="">Select a treatment...</option>
+            <option>Neurotoxin — Forehead</option>
+            <option>Neurotoxin — Crow's Feet</option>
+            <option>Brow Lift & Arch Definition</option>
+            <option>Lower Face / Jaw / Neck</option>
+            <option>Lip Flip & Perioral</option>
+            <option>Waitlist — Coming Soon Services</option>
+            <option>Not sure — I'd like to talk</option>
+          </select>
+        </div>
+        <div class="field"><label>Tell me more</label><textarea id="f-msg" rows="4" placeholder="Your goals, questions, or anything you'd like me to know..."></textarea></div>
+        <button class="btn-teal btn-full" style="padding:.9rem" onclick="submitInquiry()">
+          Send Message
+          <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="ft-brand">Nimbus Aesthetics</span>
+  <span class="ft-copy">© 2026 Nimbus Aesthetics · San Antonio, TX · All rights reserved</span>
+</footer>
+
+<script>
+/* ══ SUPABASE ════════════════════════════════════════════ */
+const SB_URL='https://rqytpqaswofdwhmsaykn.supabase.co';
+const SB_ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJxeXRwcWFzd29mZHdobXNheWtuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5MTU5MzksImV4cCI6MjA4ODQ5MTkzOX0.vzsT4oWSxKoWzfDmw7SaCaImA6_SshYwuLA9_nmNHtg';
+const sb=supabase.createClient(SB_URL,SB_ANON);
+
+/* ══ FORM SUBMIT ═════════════════════════════════════════ */
+async function submitInquiry(){
+  const fname=document.getElementById('f-fname').value.trim();
+  const lname=document.getElementById('f-lname').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const phone=document.getElementById('f-phone').value.trim();
+  const service=document.getElementById('f-service').value;
+  const msg=document.getElementById('f-msg').value.trim();
+  const msgEl=document.getElementById('form-msg');
+
+  msgEl.className='form-msg';
+  if(!email){msgEl.textContent='Please enter your email.';msgEl.className='form-msg error';return;}
+
+  const name=`${fname} ${lname}`.trim()||'Guest';
+  try{
+    await sb.from('nimbus_leads').insert({
+      type:'consultation_inquiry',name,email,
+      phone:phone||null,service:service||null,
+      notes:msg||null,source:'nimbus-site'
+    });
+    await sb.from('email_captures').insert({email,name,source:'nimbus-contact',subscribed:true}).catch(()=>{});
+    msgEl.textContent='Message received — I\'ll be in touch personally within 24 hours. ✦';
+    msgEl.className='form-msg success';
+    ['f-fname','f-lname','f-email','f-phone','f-msg'].forEach(id=>{document.getElementById(id).value='';});
+    document.getElementById('f-service').value='';
+  }catch(e){
+    msgEl.textContent='Something went wrong. Please try again.';
+    msgEl.className='form-msg error';
+  }
+}
+
+/* ══ SCROLL REVEAL ════════════════════════════════════════ */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:.06});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+/* ══ THREE.JS — TURQUOISE COSMOS (DJ's brand) ════════════ */
+(function(){
+  const canvas=document.getElementById('cosmos');
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  renderer.setSize(window.innerWidth,window.innerHeight);
+  renderer.setClearColor(0x000000,0);
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,.1,400);
+  camera.position.z=10;
+
+  function mkDust(n,spread,sMin,sMax,hex,op){
+    const g=new THREE.BufferGeometry();
+    const p=new Float32Array(n*3),s=new Float32Array(n);
+    for(let i=0;i<n;i++){
+      const th=Math.random()*Math.PI*2,ph=Math.acos(2*Math.random()-1);
+      const r=Math.cbrt(Math.random())*spread;
+      p[i*3]=r*Math.sin(ph)*Math.cos(th);
+      p[i*3+1]=r*Math.sin(ph)*Math.sin(th);
+      p[i*3+2]=(Math.random()-.5)*spread*.15;
+      s[i]=Math.random()*(sMax-sMin)+sMin;
+    }
+    g.setAttribute('position',new THREE.BufferAttribute(p,3));
+    g.setAttribute('size',new THREE.BufferAttribute(s,1));
+    return new THREE.Points(g,new THREE.ShaderMaterial({transparent:true,
+      uniforms:{col:{value:new THREE.Color(hex)},op:{value:op}},
+      vertexShader:`attribute float size;void main(){vec4 mv=modelViewMatrix*vec4(position,1.);float d=clamp(-mv.z,.5,200.);gl_PointSize=size*(265./d);gl_Position=projectionMatrix*mv;}`,
+      fragmentShader:`uniform vec3 col;uniform float op;void main(){vec2 uv=gl_PointCoord-.5;float d=length(uv)*2.;float c=smoothstep(.18,.0,d);float h=smoothstep(1.,.18,d)*.28;float a=(c+h)*op;vec3 cc=mix(col*.8,col*1.2,c);gl_FragColor=vec4(cc,a);}`
+    }));
+  }
+
+  // Star layers — teal-dominant, gold accent, white stars
+  const s1=mkDust(2200,30,.2,.7,0xC8E8E4,.25);   // cool white base
+  const s2=mkDust(200,18,1.0,2.8,0x0BBFB8,.72);  // teal sparkles — brand
+  const s3=mkDust(100,14,1.5,3.5,0x40DDD6,.6);   // teal-l bright
+  const s4=mkDust(80,16,.9,2.4,0xD4A850,.65);    // gold accent
+  const s5=mkDust(55,12,1.8,3.2,0xE8C870,.55);   // champagne shimmer
+  const s6=mkDust(40,10,2.2,3.8,0xF0FAF9,.82);   // bright white stars
+  scene.add(s1,s2,s3,s4,s5,s6);
+
+  function mkVeil(w,h,hex,str,x,y,z,rx,ry){
+    const g=new THREE.PlaneGeometry(w,h);
+    const m=new THREE.ShaderMaterial({transparent:true,side:THREE.DoubleSide,depthWrite:false,
+      uniforms:{col:{value:new THREE.Color(hex)},str:{value:str},t:{value:0}},
+      vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
+      fragmentShader:`varying vec2 vUv;uniform vec3 col;uniform float str;uniform float t;void main(){vec2 uv=vUv-.5;float r=length(uv*vec2(1.,1.4));float b=sin(t*.2+r*3.)*.08+.92;float w=sin(uv.x*6.+t*.1)*.04+sin(uv.y*4.-t*.07)*.04;float a=exp(-(r+w)*2.8)*str*b;float c=exp(-r*8.)*str*.35;gl_FragColor=vec4(col,clamp(a+c,0.,.3));}`
+    });
+    const mesh=new THREE.Mesh(g,m);mesh.position.set(x,y,z);mesh.rotation.x=rx;mesh.rotation.y=ry;return{mesh,m};
+  }
+
+  // Nebula veils — teal/aqua palette
+  const n1=mkVeil(22,16,0x031C1A,.2,3,0,-5,.1,-.08);   // deep teal right
+  const n2=mkVeil(18,13,0x051410,.16,-3,2,-6,-.08,.12);  // teal-dark left
+  const n3=mkVeil(14,11,0x042818,.12,0,-1,-7,.05,.05);   // emerald hint
+  const n4=mkVeil(30,22,0x030C0B,.18,0,0,-8,0,0);        // void fill
+  const n5=mkVeil(18,14,0x3A2800,.09,1.5,1,-9,.04,-.04); // gold whisper
+  scene.add(n1.mesh,n2.mesh,n3.mesh,n4.mesh,n5.mesh);
+  const nebs=[n1,n2,n3,n4,n5];
+
+  function mkRing(r,op,hex,rx,ry){
+    const g=new THREE.TorusGeometry(r,.0015,2,300);
+    const m=new THREE.MeshBasicMaterial({color:new THREE.Color(hex),transparent:true,opacity:op});
+    const mesh=new THREE.Mesh(g,m);mesh.rotation.x=rx;mesh.rotation.y=ry;return mesh;
+  }
+  const r1=mkRing(6,.1,0x0BBFB8,Math.PI*.35,0);        // teal primary
+  const r2=mkRing(8.5,.045,0x40DDD6,Math.PI*.5,Math.PI*.12); // teal-l
+  const r3=mkRing(4.5,.065,0xD4A850,Math.PI*.25,Math.PI*.06); // gold accent ring
+  scene.add(r1,r2,r3);
+
+  let tx=0,ty=0,cx=0,cy=0,sY=0;
+  document.addEventListener('mousemove',e=>{tx=(e.clientX/window.innerWidth-.5)*.6;ty=(e.clientY/window.innerHeight-.5)*.4;});
+  window.addEventListener('scroll',()=>{sY=window.scrollY;});
+
+  let t=0;
+  (function loop(){
+    requestAnimationFrame(loop);t+=.004;
+    cx+=(tx-cx)*.035;cy+=(ty-cy)*.035;
+    s1.rotation.y=t*.003+cx*.08;s1.rotation.x=cy*.05;
+    s2.rotation.y=t*.009+cx*.15;s2.rotation.z=t*.003;
+    s3.rotation.y=t*.013+cx*.2;s3.rotation.z=-t*.004;
+    s4.rotation.y=t*.007+cx*.13;s4.rotation.x=t*.002+cy*.09;
+    s5.rotation.y=t*.016+cx*.22;s5.rotation.z=t*.005;
+    s6.rotation.y=t*.021+cx*.28;
+    nebs.forEach((n,i)=>{n.m.uniforms.t.value=t+i*1.2;});
+    n1.mesh.rotation.z=t*.005;n2.mesh.rotation.z=-t*.003;
+    r1.rotation.z=t*.013;r1.material.opacity=.07+Math.sin(t*.32)*.04;
+    r2.rotation.z=-t*.009;r2.material.opacity=.03+Math.sin(t*.26+.5)*.02;
+    r3.rotation.z=t*.017;r3.material.opacity=.04+Math.sin(t*.4)*.025;
+    camera.position.x=cx*.5;camera.position.y=-cy*.35-sY*.001;
+    renderer.render(scene,camera);
+  })();
+
+  window.addEventListener('resize',()=>{
+    camera.aspect=window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth,window.innerHeight);
+  });
+})();
+
+/* ══ CURSOR ══════════════════════════════════════════════ */
+const cdot=document.getElementById('cdot'),cring=document.getElementById('cring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cdot.style.left=mx+'px';cdot.style.top=my+'px';});
+(function tick(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cring.style.left=rx+'px';cring.style.top=ry+'px';requestAnimationFrame(tick);})();
+</script>
+</body>
+</html>
