@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="legal-version" content="1.0">
+  <link rel="canonical" href="">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Community Guidelines — Emberline Reading Oasis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,100;1,9..144,300;0,9..144,100&family=Cormorant+Garamond:ital,wght@1,300;1,400;0,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<style>
+:root{
+  --void:#030402;--deep:#080C06;--bark:#1A200F;
+  --jade:#00D48A;--jade-l:#3DFFC0;
+  --ember:#D4720A;--ember-l:#FF9B3A;
+  --p0:#F4EDD8;--p1:#D8CCAA;--p2:#9A8A68;--p3:#4A3E28;
+  --be:rgba(212,114,10,.13);--bj:rgba(0,212,138,.12);--bjl:rgba(0,212,138,.28);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--void);color:var(--p1);font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.6}
+::selection{background:rgba(0,212,138,.18);color:var(--p0)}
+::-webkit-scrollbar{width:2px}::-webkit-scrollbar-thumb{background:linear-gradient(var(--jade),var(--ember))}
+
+.page-wrap{max-width:780px;margin:0 auto;padding:5rem 2rem 8rem}
+.page-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4rem;flex-wrap:wrap;gap:1rem}
+.brand{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:1.2rem;color:var(--p0);text-decoration:none}
+.brand em{font-style:normal;color:var(--ember-l)}
+.back-link{font-family:'DM Mono',monospace;font-size:.44rem;letter-spacing:.18em;text-transform:uppercase;color:var(--p3);text-decoration:none;transition:color .25s;display:flex;align-items:center;gap:.5rem}
+.back-link:hover{color:var(--ember-l)}
+
+.page-hero{margin-bottom:3.5rem}
+.hero-eye{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.3em;text-transform:uppercase;color:var(--jade);margin-bottom:.8rem}
+.hero-title{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:clamp(2.2rem,5.5vw,4rem);color:var(--p0);line-height:1.05;margin-bottom:.8rem}
+.hero-version{font-family:'DM Mono',monospace;font-size:.44rem;letter-spacing:.22em;text-transform:uppercase;color:var(--p3)}
+
+/* MARKDOWN RENDERING */
+.guidelines-content h1{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:clamp(2rem,4.5vw,3.2rem);color:var(--p0);margin:2.5rem 0 1rem;line-height:1.1}
+.guidelines-content h2{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:clamp(1.4rem,3vw,2rem);color:var(--p0);margin:2.5rem 0 .8rem;line-height:1.15;border-bottom:1px solid var(--be);padding-bottom:.6rem}
+.guidelines-content h3{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:1.2rem;color:var(--p1);margin:1.8rem 0 .6rem}
+.guidelines-content p{font-size:1.02rem;color:var(--p2);line-height:2;margin-bottom:1rem}
+.guidelines-content ul,.guidelines-content ol{margin:0 0 1.2rem 1.5rem}
+.guidelines-content li{font-size:1rem;color:var(--p2);line-height:1.9;margin-bottom:.3rem}
+.guidelines-content ul li::marker{color:var(--jade)}
+.guidelines-content strong{color:var(--p1);font-weight:400;font-style:normal}
+.guidelines-content em{color:var(--p1)}
+.guidelines-content blockquote{border-left:2px solid var(--jade);padding:1rem 1.3rem;margin:1.5rem 0;background:rgba(0,212,138,.04);border-radius:0 1px 1px 0}
+.guidelines-content blockquote p{color:var(--p1);margin-bottom:0;font-size:1.05rem}
+.guidelines-content hr{height:1px;background:linear-gradient(90deg,transparent,rgba(212,114,10,.13),rgba(0,212,138,.09),transparent);border:none;margin:2.5rem 0}
+.guidelines-content code{font-family:'DM Mono',monospace;font-size:.88em;background:rgba(0,212,138,.06);color:var(--jade-l);padding:.15rem .4rem;border-radius:1px;font-style:normal}
+
+/* CTA STRIP */
+.cta-strip{display:flex;gap:.8rem;flex-wrap:wrap;margin:3.5rem 0;padding:2.2rem;background:linear-gradient(145deg,rgba(20,26,12,.8),rgba(10,14,7,.9));border:1px solid var(--bj);border-radius:2px;align-items:center;justify-content:space-between}
+.cta-strip-text{flex:1}
+.cta-title{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:1.3rem;color:var(--p0);margin-bottom:.3rem}
+.cta-body{font-size:.95rem;color:var(--p3)}
+.btn-submit{display:inline-flex;align-items:center;gap:.7rem;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:.98rem;color:var(--void);background:linear-gradient(135deg,var(--jade-l),var(--jade));border:none;border-radius:1px;padding:.85rem 1.8rem;cursor:pointer;transition:all .3s;text-decoration:none;white-space:nowrap}
+.btn-submit:hover{box-shadow:0 8px 32px rgba(0,212,138,.4);transform:translateY(-2px)}
+
+/* LOADING */
+.loading-glyph{font-size:2rem;display:block;margin:5rem auto;text-align:center;animation:lglyph 2s ease-in-out infinite}
+@keyframes lglyph{0%,100%{filter:drop-shadow(0 0 20px rgba(0,212,138,.5))}50%{filter:drop-shadow(0 0 45px rgba(0,212,138,.9))}}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+  <div class="page-top">
+    <a href="index.html" class="brand">Ember<em>line</em></a>
+    <a href="submit.html" class="back-link">Submit a Book ↗</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="hero-eye">Community Standards</div>
+    <h1 class="hero-title">Community<br><em>Guidelines.</em></h1>
+    <div class="hero-version" id="guideline-version">Loading current version...</div>
+  </div>
+
+  <div id="guidelines-body">
+    <span class="loading-glyph">✦</span>
+  </div>
+
+  <div class="cta-strip">
+    <div class="cta-strip-text">
+      <div class="cta-title">Ready to submit your book?</div>
+      <div class="cta-body">Walk through our four-step submission process. Most reviews complete within 5–10 business days.</div>
+    </div>
+    <a href="submit.html" class="btn-submit">✦ Submit a Book</a>
+  </div>
+</div>
+
+<script>
+const SB = 'https://rqytpqaswofdwhmsaykn.supabase.co';
+const SK = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJxeXRwcWFzd29mZHdobXNheWtuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5MTU5MzksImV4cCI6MjA4ODQ5MTkzOX0.vzsT4oWSxKoWzfDmw7SaCaImA6_SshYwuLA9_nmNHtg';
+const sb = supabase.createClient(SB, SK);
+
+async function loadGuidelines() {
+  const { data } = await sb.from('oasis_community_guidelines').select('*').eq('is_current', true).single();
+  if (!data) return;
+  document.getElementById('guideline-version').textContent = 'Version ' + data.version + ' · Effective ' + new Date(data.created_at).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  // Simple markdown → HTML converter
+  document.getElementById('guidelines-body').innerHTML = '<div class="guidelines-content">' + mdToHtml(data.content) + '</div>';
+}
+
+function mdToHtml(md) {
+  return md
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^\*\*(.+?)\*\*/gm, '<strong>$1</strong>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/`(.+?)`/g, '<code>$1</code>')
+    .replace(/^> (.+)$/gm, '<blockquote><p>$1</p></blockquote>')
+    .replace(/^---$/gm, '<hr>')
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>\n?)+/g, s => '<ul>' + s + '</ul>')
+    .replace(/\n\n+/g, '</p><p>')
+    .replace(/^(?!<[h1-6|ul|li|blockquote|hr])(.+)$/gm, s => s.trim() ? s : '')
+    .split('\n').map(line => {
+      if (line.match(/^<(h[1-6]|ul|li|blockquote|hr)/)) return line;
+      if (line.trim() && !line.startsWith('<')) return '<p>' + line + '</p>';
+      return line;
+    }).join('\n');
+}
+
+loadGuidelines();
+</script>
+
+<script src="/legal.js" data-product="oasis"></script>
+</body>
+</html>
