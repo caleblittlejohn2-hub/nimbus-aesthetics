@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy — Emberline Holdings Company LLC</title>
+<meta name="description" content="Emberline's privacy policy. We collect only what we need, never sell your data, and protect children's information with the highest care.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,100;1,9..144,300;0,9..144,100;0,9..144,200&family=Cormorant+Garamond:ital,wght@1,300;1,400;0,300;0,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#030402;--deep:#080C06;--soil:#0F1409;--bark:#1A200F;
+  --jade:#00D48A;--jade-l:#3DFFC0;--jade-d:#006A44;
+  --ember:#D4720A;--ember-l:#FF9B3A;
+  --violet:#7C3AED;--gold:#C8A84B;
+  --p0:#F4EDD8;--p1:#D8CCAA;--p2:#9A8A68;--p3:#4A3E28;
+  --be:rgba(212,114,10,.13);--bel:rgba(212,114,10,.3);
+  --bj:rgba(0,212,138,.11);--bjl:rgba(0,212,138,.28);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--void);color:var(--p1);font-family:'Cormorant Garamond',serif;font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.7}
+::selection{background:rgba(0,212,138,.18);color:var(--p0)}
+::-webkit-scrollbar{width:2px}::-webkit-scrollbar-thumb{background:linear-gradient(var(--jade),var(--ember))}
+
+/* ── LAYOUT ─────────────────────────────── */
+.site-wrap{max-width:820px;margin:0 auto;padding:0 2rem 8rem}
+
+/* ── HEADER ─────────────────────────────── */
+header{
+  border-bottom:1px solid var(--be);
+  padding:2.2rem 0 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+  margin-bottom:4rem;
+}
+.brand{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:1.15rem;color:var(--p0);text-decoration:none}
+.brand em{font-style:normal;color:var(--ember-l)}
+.back{font-family:'DM Mono',monospace;font-size:.43rem;letter-spacing:.18em;text-transform:uppercase;color:var(--p3);text-decoration:none;transition:color .25s}
+.back:hover{color:var(--ember-l)}
+
+/* ── HERO ────────────────────────────────── */
+.doc-hero{margin-bottom:3.5rem}
+.doc-eye{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.3em;text-transform:uppercase;color:var(--jade);margin-bottom:.8rem}
+.doc-title{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:clamp(2.2rem,5.5vw,3.8rem);color:var(--p0);line-height:1.05;margin-bottom:1rem}
+.doc-meta{display:flex;gap:1.5rem;flex-wrap:wrap}
+.meta-chip{font-family:'DM Mono',monospace;font-size:.43rem;letter-spacing:.16em;text-transform:uppercase;padding:.28rem .75rem;border-radius:1px}
+.chip-version{background:rgba(0,212,138,.08);color:var(--jade);border:1px solid var(--bj)}
+.chip-effective{background:rgba(212,114,10,.08);color:var(--ember-l);border:1px solid var(--be)}
+.chip-attorney{background:rgba(200,168,75,.08);color:var(--gold);border:1px solid rgba(200,168,75,.2)}
+
+/* ── ATTORNEY NOTICE ─────────────────────── */
+.attorney-notice{
+  background:linear-gradient(145deg,rgba(200,168,75,.07),rgba(200,168,75,.03));
+  border:1px solid rgba(200,168,75,.2);border-radius:2px;
+  padding:1.5rem 1.8rem;margin-bottom:3rem;
+  position:relative;overflow:hidden;
+}
+.attorney-notice::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,.4),transparent)}
+.an-label{font-family:'DM Mono',monospace;font-size:.44rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.an-text{font-size:.97rem;color:rgba(200,168,75,.7);line-height:1.9;font-style:italic}
+
+/* ── TOC ─────────────────────────────────── */
+.toc{
+  background:linear-gradient(145deg,rgba(20,26,12,.8),rgba(10,14,7,.9));
+  border:1px solid var(--be);border-radius:2px;
+  padding:2rem 2.2rem;margin-bottom:4rem;
+  position:relative;overflow:hidden;
+}
+.toc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,114,10,.3),transparent)}
+.toc-title{font-family:'DM Mono',monospace;font-size:.46rem;letter-spacing:.24em;text-transform:uppercase;color:var(--jade);margin-bottom:1.2rem}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:.3rem}
+.toc-link{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.97rem;color:var(--p3);text-decoration:none;padding:.28rem 0;transition:color .25s;display:flex;align-items:center;gap:.5rem}
+.toc-link::before{content:'✦';font-size:.42rem;color:var(--jade);opacity:.5;flex-shrink:0}
+.toc-link:hover{color:var(--ember-l)}
+@media(max-width:580px){.toc-grid{grid-template-columns:1fr}}
+
+/* ── COPPA CALLOUT ───────────────────────── */
+.coppa-callout{
+  background:linear-gradient(145deg,rgba(0,212,138,.07),rgba(0,212,138,.03));
+  border:1px solid var(--bjl);border-radius:2px;
+  padding:2rem 2.2rem;margin-bottom:3.5rem;
+  position:relative;overflow:hidden;
+}
+.coppa-callout::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--jade),var(--jade-l),transparent)}
+.cc-badge{display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Mono',monospace;font-size:.44rem;letter-spacing:.2em;text-transform:uppercase;color:var(--jade);margin-bottom:.8rem}
+.cc-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--jade);box-shadow:0 0 8px var(--jade);flex-shrink:0;animation:ccPulse 2s ease-in-out infinite}
+@keyframes ccPulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
+.cc-title{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:1.3rem;color:var(--p0);margin-bottom:.5rem}
+.cc-text{font-size:.98rem;color:var(--p2);line-height:2}
+
+/* ── SECTIONS ────────────────────────────── */
+.section{margin-bottom:3.5rem;scroll-margin-top:2rem}
+.section-num{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:3rem;color:rgba(0,212,138,.1);line-height:1;margin-bottom:.2rem}
+.section-title{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:clamp(1.4rem,3vw,2rem);color:var(--p0);margin-bottom:1.2rem;padding-bottom:.7rem;border-bottom:1px solid var(--be)}
+.section p{font-size:1.02rem;color:var(--p2);line-height:2.05;margin-bottom:1rem}
+.section p:last-child{margin-bottom:0}
+.section ul,.section ol{margin:0 0 1.2rem 1.4rem}
+.section li{font-size:1rem;color:var(--p2);line-height:1.95;margin-bottom:.35rem}
+.section ul li::marker{color:var(--jade)}
+.section strong{color:var(--p1);font-weight:400;font-style:normal}
+.section em{color:var(--p1)}
+.section h3{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:1.15rem;color:var(--p0);margin:2rem 0 .7rem}
+.section h4{font-family:'DM Mono',monospace;font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:var(--jade);margin:1.5rem 0 .6rem;font-style:normal;font-weight:400}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:1.2rem 0}
+.data-table th{font-family:'DM Mono',monospace;font-size:.43rem;letter-spacing:.15em;text-transform:uppercase;color:var(--p3);text-align:left;padding:.7rem 1rem;border-bottom:1px solid var(--be);font-style:normal;font-weight:400}
+.data-table td{padding:.75rem 1rem;border-bottom:1px solid rgba(212,114,10,.05);font-size:.97rem;color:var(--p2);vertical-align:top}
+.data-table tr:hover td{background:rgba(0,212,138,.02)}
+
+/* RIGHTS BOX */
+.rights-box{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:.8rem;margin:1.5rem 0;
+}
+.right-item{
+  padding:1.1rem 1.3rem;background:rgba(0,212,138,.04);
+  border:1px solid var(--bj);border-radius:1px;
+  display:flex;align-items:flex-start;gap:.7rem;
+}
+.ri-icon{font-size:1.2rem;flex-shrink:0;margin-top:.08rem}
+.ri-title{font-family:'DM Mono',monospace;font-size:.43rem;letter-spacing:.12em;text-transform:uppercase;color:var(--jade);margin-bottom:.3rem;font-style:normal;font-weight:400}
+.ri-body{font-size:.9rem;color:var(--p3);line-height:1.8}
+
+/* CONTACT BOX */
+.contact-box{
+  background:linear-gradient(145deg,rgba(20,26,12,.85),rgba(10,14,7,.95));
+  border:1px solid var(--bjl);border-radius:2px;
+  padding:2.2rem 2.5rem;margin-top:3rem;
+  position:relative;overflow:hidden;
+}
+.contact-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,138,.4),transparent)}
+.cb-title{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:1.4rem;color:var(--p0);margin-bottom:1rem}
+.cb-row{display:flex;gap:.6rem;align-items:flex-start;margin-bottom:.6rem;font-size:.97rem;color:var(--p2)}
+.cb-row strong{color:var(--p1);font-weight:400;font-style:normal;min-width:140px;flex-shrink:0}
+.cb-row a{color:var(--jade);text-decoration:none;transition:color .25s}
+.cb-row a:hover{color:var(--jade-l)}
+
+/* DIVIDER */
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,114,10,.1),rgba(0,212,138,.07),transparent);margin:3rem 0}
+
+/* FOOTER */
+footer{border-top:1px solid var(--be);padding-top:2.5rem;margin-top:4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft-brand{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:1rem;color:var(--p0)}
+.ft-brand em{font-style:normal;color:var(--ember-l)}
+.ft-legal{font-family:'DM Mono',monospace;font-size:.42rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(154,138,104,.25);line-height:2;text-align:right}
+.ft-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.ft-link{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:var(--p3);text-decoration:none;transition:color .25s}
+.ft-link:hover{color:var(--ember-l)}
+</style>
+</head>
+<body>
+<div class="site-wrap">
+
+<header>
+  <a href="index.html" class="brand">Ember<em>line</em></a>
+  <a href="index.html" class="back">← Return to Oasis</a>
+</header>
+
+<div class="doc-hero">
+  <div class="doc-eye">Legal Document</div>
+  <h1 class="doc-title">Privacy Policy</h1>
+  <div class="doc-meta">
+    <span class="meta-chip chip-version">Version 1.0</span>
+    <span class="meta-chip chip-effective">Effective: March 28, 2026</span>
+    <span class="meta-chip chip-attorney">⚠ Pending Attorney Review</span>
+  </div>
+</div>
+
+<div class="attorney-notice">
+  <div class="an-label">⚠ Attorney Review Notice</div>
+  <div class="an-text">This document is a comprehensive draft prepared for attorney review prior to publication. It is not yet in final legal force. Emberline Holdings Company LLC is seeking review by a licensed attorney prior to deployment. No reliance should be placed on this document until the "Pending Attorney Review" badge is removed.</div>
+</div>
+
+<div class="coppa-callout">
+  <div class="cc-badge">COPPA Protection Active</div>
+  <h2 class="cc-title">Protecting Children's Privacy Is Our First Commitment</h2>
+  <p class="cc-text">The Emberline Reading Oasis serves readers of all ages, including children under 13. We comply fully with the Children's Online Privacy Protection Act (COPPA). We do not knowingly collect personal information from children under 13 without verifiable parental consent. If you are a parent or guardian and believe your child has provided us personal information without your consent, please contact us immediately at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9bebe9f2edfaf8e2dbfef6f9fee9f7f2f5fefce9f4eeebb5f4e9fc">[email&#160;protected]</a></strong> and we will delete that information within 72 hours.</p>
+</div>
+
+<nav class="toc">
+  <div class="toc-title">Contents</div>
+  <div class="toc-grid">
+    <a href="#s1" class="toc-link">1. Who We Are</a>
+    <a href="#s2" class="toc-link">2. Information We Collect</a>
+    <a href="#s3" class="toc-link">3. Children's Privacy (COPPA)</a>
+    <a href="#s4" class="toc-link">4. How We Use Information</a>
+    <a href="#s5" class="toc-link">5. Information Sharing</a>
+    <a href="#s6" class="toc-link">6. Data Retention</a>
+    <a href="#s7" class="toc-link">7. Security</a>
+    <a href="#s8" class="toc-link">8. Your Rights</a>
+    <a href="#s9" class="toc-link">9. California Residents (CCPA)</a>
+    <a href="#s10" class="toc-link">10. Texas Residents (TDPSA)</a>
+    <a href="#s11" class="toc-link">11. European Users (GDPR)</a>
+    <a href="#s12" class="toc-link">12. Advertising & Social Media</a>
+    <a href="#s13" class="toc-link">13. Cookies</a>
+    <a href="#s14" class="toc-link">14. Third-Party Services</a>
+    <a href="#s15" class="toc-link">15. Changes to This Policy</a>
+    <a href="#s16" class="toc-link">16. Contact Us</a>
+  </div>
+</nav>
+
+<!-- ═══ SECTIONS ═══════════════════════════════════════════════ -->
+
+<div class="section" id="s1">
+  <div class="section-num">01</div>
+  <h2 class="section-title">Who We Are</h2>
+  <p>Emberline Holdings Company LLC ("Emberline," "we," "us," or "our") is a Wyoming Close Limited Liability Company. We operate the Emberline Reading Oasis, TMC Prep, IMAT Prep, Vent House, and related digital properties accessible at <strong>emberlinegroup.org</strong>, <strong>books.emberlinegroup.org</strong>, <strong>tmcprep.emberlineworld.com</strong>, and associated subdomains (collectively, the "Services").</p>
+  <p>This Privacy Policy explains what information we collect, how we use it, who we share it with, and what rights you have regarding your personal data.</p>
+  <p>Our principal place of business is in San Antonio, Texas. You may contact our Privacy Officer at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d2a2a0bba4b3b1ab92b7bfb0b7a0bebbbcb7b5a0bda7a2fcbda0b5">[email&#160;protected]</a></strong>.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s2">
+  <div class="section-num">02</div>
+  <h2 class="section-title">Information We Collect</h2>
+
+  <h3>Information You Provide Directly</h3>
+  <table class="data-table">
+    <thead><tr><th>Category</th><th>Examples</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Account Information</strong></td><td>Name, email address, password (hashed)</td><td>Account creation and authentication</td></tr>
+      <tr><td><strong>Profile Information</strong></td><td>Display name, bio, location (optional), avatar (optional)</td><td>Community features and personalization</td></tr>
+      <tr><td><strong>Reading Activity</strong></td><td>Books read, progress, notes, shelf content</td><td>Personalized reading experience</td></tr>
+      <tr><td><strong>User-Generated Content</strong></td><td>Gallery submissions, competition entries, discussion posts</td><td>Community features</td></tr>
+      <tr><td><strong>Book Submissions</strong></td><td>Manuscript files, cover art, author details</td><td>Editorial review process</td></tr>
+      <tr><td><strong>Communications</strong></td><td>Support emails, feedback forms</td><td>Customer support</td></tr>
+      <tr><td><strong>Payment Information</strong></td><td>Processed by Stripe — we do not store card numbers</td><td>Subscription and purchase processing</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Information Collected Automatically</h3>
+  <table class="data-table">
+    <thead><tr><th>Category</th><th>Examples</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Log Data</strong></td><td>IP address, browser type, pages visited, timestamps</td><td>Security, debugging, analytics</td></tr>
+      <tr><td><strong>Device Information</strong></td><td>Device type, operating system, screen resolution</td><td>Service optimization</td></tr>
+      <tr><td><strong>Cookies</strong></td><td>Session tokens, preference cookies</td><td>Authentication and preferences (see Section 13)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Information We Do Not Collect</h3>
+  <ul>
+    <li>We do <strong>not</strong> collect Social Security numbers or government ID numbers</li>
+    <li>We do <strong>not</strong> collect precise geolocation data</li>
+    <li>We do <strong>not</strong> collect biometric data</li>
+    <li>We do <strong>not</strong> collect sensitive health information (outside Vent House clinical intake, which has its own HIPAA-compliant policy)</li>
+    <li>We do <strong>not</strong> knowingly collect any personal information from children under 13 without verifiable parental consent</li>
+  </ul>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s3">
+  <div class="section-num">03</div>
+  <h2 class="section-title">Children's Privacy (COPPA)</h2>
+  <p>The Emberline Reading Oasis is designed for readers of all ages, including young children. We take children's privacy with the highest seriousness and comply fully with the <strong>Children's Online Privacy Protection Act (COPPA), 15 U.S.C. §§ 6501–6506</strong>, and the FTC's COPPA Rule, 16 C.F.R. Part 312.</p>
+
+  <h4>Age Determination</h4>
+  <p>During account registration, we ask whether the account is for a child under 13. If yes, we require a <strong>parent or legal guardian email address</strong> to provide verifiable parental consent before we activate the child account or collect any personal information from the child.</p>
+
+  <h4>What We Collect from Children Under 13</h4>
+  <p>With verifiable parental consent, we collect only: (a) a display name chosen by the parent, and (b) reading progress data necessary to provide the reading service. We do not collect email addresses directly from children under 13.</p>
+
+  <h4>Parental Rights Under COPPA</h4>
+  <ul>
+    <li><strong>Review:</strong> You may request to review the personal information we have collected from your child</li>
+    <li><strong>Delete:</strong> You may request deletion of your child's information at any time</li>
+    <li><strong>Refuse Further Collection:</strong> You may withdraw consent and refuse further collection of your child's information</li>
+    <li><strong>No Conditioning:</strong> We do not condition participation on a child providing more personal information than is reasonably necessary</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2f5f5d46594e4c566f4a424d4a5d4346414a485d405a5f01405d48">[email&#160;protected]</a></strong> or <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="74171b040415341119161106181d1a1113061b01045a1b0613">[email&#160;protected]</a></strong>. We will respond within <strong>72 hours</strong>.</p>
+
+  <h4>No Behavioral Advertising to Children</h4>
+  <p>We do not serve behavioral advertising to users under 13 under any circumstances. We do not share children's data with any advertising networks.</p>
+
+  <h4>Operator Disclosure</h4>
+  <p>If you are a school, educational institution, or app operator providing Emberline services to children, you may serve as an agent providing parental consent on behalf of parents for school use only. Contact us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="592a3a313636352a193c343b3c2b3530373c3e2b362c2977362b3e">[email&#160;protected]</a></strong> to establish this relationship.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s4">
+  <div class="section-num">04</div>
+  <h2 class="section-title">How We Use Your Information</h2>
+  <p>We use the information we collect for the following purposes:</p>
+  <ul>
+    <li><strong>Providing the Services:</strong> Creating and managing your account, delivering the reading experience, processing book submissions, managing competitions</li>
+    <li><strong>Personalization:</strong> AI-generated welcome messages, book recommendations, reading progress tracking — using only data you have provided to us</li>
+    <li><strong>Communications:</strong> Transactional emails (account confirmation, submission updates, competition notifications), and newsletter if you subscribe</li>
+    <li><strong>Safety and Moderation:</strong> Content review pipeline, flagging system, preventing fraud and abuse</li>
+    <li><strong>Legal Compliance:</strong> Complying with applicable law, court orders, and legal process</li>
+    <li><strong>Analytics:</strong> Understanding how the Services are used to improve them — using aggregated, anonymized data only</li>
+  </ul>
+
+  <h4>What We Do Not Do With Your Data</h4>
+  <ul>
+    <li>We do <strong>not</strong> sell your personal information to third parties — ever</li>
+    <li>We do <strong>not</strong> share your data with advertisers for targeting purposes</li>
+    <li>We do <strong>not</strong> use your data to train AI models sold to third parties</li>
+    <li>We do <strong>not</strong> use children's data for any purpose other than providing the reading service</li>
+  </ul>
+
+  <p><strong>Anthropic's Claude AI:</strong> We use Claude (Anthropic, PBC) to power personalization features (welcome messages, book recommendations). Text you provide may be processed by Anthropic's API. Anthropic's privacy policy governs their processing. We do not send children's personal data to Claude's API — only genre preferences and reading level.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s5">
+  <div class="section-num">05</div>
+  <h2 class="section-title">Information Sharing</h2>
+  <p>We share personal information only in these limited circumstances:</p>
+  <ul>
+    <li><strong>Service Providers:</strong> Supabase (database and authentication), Stripe (payments), Resend (email delivery), ElevenLabs (audiobook synthesis), Anthropic (AI personalization). Each is bound by a data processing agreement.</li>
+    <li><strong>Legal Requirements:</strong> If required by law, court order, or governmental authority — we will notify you to the extent permitted by law</li>
+    <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you via email and/or prominent notice on our website</li>
+    <li><strong>With Your Consent:</strong> We may share information with your explicit consent for purposes not listed here</li>
+    <li><strong>Public Profile:</strong> If you set your profile to public, your display name, bio, and public gallery submissions are visible to other users</li>
+  </ul>
+  <p><strong>We never sell personal information. We never share personal information with advertisers for targeting purposes. These are hard commitments, not policies that vary by jurisdiction.</strong></p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s6">
+  <div class="section-num">06</div>
+  <h2 class="section-title">Data Retention</h2>
+  <p>We retain your personal information for as long as your account is active, or as needed to provide you the Services. Specifically:</p>
+  <table class="data-table">
+    <thead><tr><th>Data Type</th><th>Retention Period</th></tr></thead>
+    <tbody>
+      <tr><td>Account and profile data</td><td>Until account deletion, then 30 days before permanent deletion</td></tr>
+      <tr><td>Reading progress and notes</td><td>Until account deletion</td></tr>
+      <tr><td>Children's data</td><td>Until parent requests deletion or child turns 13, whichever comes first</td></tr>
+      <tr><td>Payment records</td><td>7 years (tax and legal compliance)</td></tr>
+      <tr><td>Book submission records</td><td>3 years after submission decision</td></tr>
+      <tr><td>Support communications</td><td>2 years</td></tr>
+      <tr><td>Security and access logs</td><td>90 days</td></tr>
+    </tbody>
+  </table>
+  <p>To request deletion of your account and all associated data, email <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1b6b69726d7a78625b7e76797e697772757e7c69746e6b3574697c">[email&#160;protected]</a></strong>. We will complete deletion within 30 days.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s7">
+  <div class="section-num">07</div>
+  <h2 class="section-title">Security</h2>
+  <p>We implement industry-standard security measures to protect your personal information:</p>
+  <ul>
+    <li>All data transmitted between your device and our servers is encrypted via TLS 1.2 or higher</li>
+    <li>Passwords are hashed using bcrypt — we never store plaintext passwords</li>
+    <li>Database access is controlled via Row-Level Security (RLS) policies — users can only access their own data</li>
+    <li>All files uploaded to the platform are stored in access-controlled private storage buckets</li>
+    <li>Authentication tokens are short-lived and rotated regularly</li>
+    <li>We conduct regular security reviews of our infrastructure</li>
+  </ul>
+  <p>No method of transmission over the internet or method of electronic storage is 100% secure. While we strive to protect your personal information, we cannot guarantee its absolute security. In the event of a data breach affecting your rights, we will notify you within <strong>72 hours</strong> of discovery, as required by applicable law.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s8">
+  <div class="section-num">08</div>
+  <h2 class="section-title">Your Rights</h2>
+  <p>Regardless of where you live, you have the following rights with respect to your personal information:</p>
+  <div class="rights-box">
+    <div class="right-item"><span class="ri-icon">👁️</span><div><div class="ri-title">Access</div><div class="ri-body">Request a copy of the personal information we hold about you</div></div></div>
+    <div class="right-item"><span class="ri-icon">✏️</span><div><div class="ri-title">Correction</div><div class="ri-body">Request correction of inaccurate or incomplete personal information</div></div></div>
+    <div class="right-item"><span class="ri-icon">🗑️</span><div><div class="ri-title">Deletion</div><div class="ri-body">Request deletion of your personal information (subject to legal retention requirements)</div></div></div>
+    <div class="right-item"><span class="ri-icon">📦</span><div><div class="ri-title">Portability</div><div class="ri-body">Request your data in a structured, machine-readable format</div></div></div>
+    <div class="right-item"><span class="ri-icon">🚫</span><div><div class="ri-title">Opt-Out</div><div class="ri-body">Opt out of marketing emails at any time via the unsubscribe link or <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9aeae8f3ecfbf9e3dafff7f8ffe8f6f3f4fffde8f5efeab4f5e8fd">[email&#160;protected]</a></div></div></div>
+    <div class="right-item"><span class="ri-icon">🛡️</span><div><div class="ri-title">Objection</div><div class="ri-body">Object to processing of your personal information in certain circumstances</div></div></div>
+  </div>
+  <p>To exercise any of these rights, email <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3646445f4057554f76535b5453445a5f5853514459434618594451">[email&#160;protected]</a></strong>. We will respond within <strong>30 days</strong>. We do not charge a fee and will not discriminate against you for exercising your rights.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s9">
+  <div class="section-num">09</div>
+  <h2 class="section-title">California Residents (CCPA / CPRA)</h2>
+  <p>If you are a California resident, you have additional rights under the <strong>California Consumer Privacy Act (CCPA)</strong> and the <strong>California Privacy Rights Act (CPRA)</strong>:</p>
+  <ul>
+    <li><strong>Right to Know:</strong> The categories and specific pieces of personal information we collect, the sources, business purposes, and third parties we share with</li>
+    <li><strong>Right to Delete:</strong> Request deletion of personal information we have collected about you</li>
+    <li><strong>Right to Correct:</strong> Request correction of inaccurate personal information</li>
+    <li><strong>Right to Opt-Out of Sale or Sharing:</strong> We do not sell or share personal information for cross-context behavioral advertising — this right is already fully honored</li>
+    <li><strong>Right to Limit Use of Sensitive Personal Information:</strong> We do not use sensitive personal information for purposes other than those disclosed in this policy</li>
+    <li><strong>Non-Discrimination:</strong> We will not discriminate against you for exercising any CCPA rights</li>
+  </ul>
+  <p>To submit a CCPA request: email <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3343415a4552504a73565e5156415f5a5d5654415c46431d5c4154">[email&#160;protected]</a></strong> with "CCPA Request" in the subject line. We will respond within <strong>45 days</strong>. We may request verification of your identity before processing the request.</p>
+  <p><strong>Authorized Agent:</strong> You may designate an authorized agent to make requests on your behalf. The agent must provide written authorization signed by you.</p>
+  <p><strong>Categories of Personal Information Collected (past 12 months):</strong> Identifiers (name, email); Internet activity (page views, session data); Commercial information (purchase history); Inferences drawn from the above (reading preferences). We have not sold any personal information in the preceding 12 months.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s10">
+  <div class="section-num">10</div>
+  <h2 class="section-title">Texas Residents (TDPSA)</h2>
+  <p>If you are a Texas resident, you have rights under the <strong>Texas Data Privacy and Security Act (TDPSA)</strong>, effective July 1, 2024:</p>
+  <ul>
+    <li><strong>Right to Access:</strong> Confirm whether we process your personal data and access that data</li>
+    <li><strong>Right to Correct:</strong> Correct inaccuracies in your personal data</li>
+    <li><strong>Right to Delete:</strong> Delete personal data you have provided or that we have obtained about you</li>
+    <li><strong>Right to Data Portability:</strong> Obtain a portable copy of your personal data</li>
+    <li><strong>Right to Opt-Out:</strong> Opt out of processing for targeted advertising, sale of personal data, and profiling. We do not conduct these activities — this right is fully honored as a matter of policy.</li>
+    <li><strong>Right to Appeal:</strong> If we decline to act on your request, you may appeal that decision. We will respond to appeals within 60 days.</li>
+  </ul>
+  <p>To submit a TDPSA request: email <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e090928996818399a0858d8285928c898e8587928f9590ce8f9287">[email&#160;protected]</a></strong> with "TDPSA Request" in the subject line.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s11">
+  <div class="section-num">11</div>
+  <h2 class="section-title">European Users (GDPR)</h2>
+  <p>If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, your personal data is processed in accordance with the <strong>General Data Protection Regulation (GDPR)</strong>.</p>
+  <h4>Legal Basis for Processing</h4>
+  <ul>
+    <li><strong>Contract:</strong> Processing necessary to provide the Services you have requested (account creation, reading features)</li>
+    <li><strong>Legitimate Interests:</strong> Security, fraud prevention, improving our Services (balanced against your rights)</li>
+    <li><strong>Consent:</strong> Marketing emails, optional features — which you may withdraw at any time</li>
+    <li><strong>Legal Obligation:</strong> Compliance with applicable law</li>
+  </ul>
+  <h4>International Transfers</h4>
+  <p>Your data may be transferred to and processed in the United States. We rely on Standard Contractual Clauses (SCCs) approved by the European Commission for such transfers where required.</p>
+  <h4>Data Protection Rights (GDPR Articles 15–22)</h4>
+  <p>You have the rights of access, rectification, erasure, restriction of processing, data portability, and objection. You also have the right to lodge a complaint with your local supervisory authority.</p>
+  <p>Our GDPR contact: <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aacdcedad8eacfc7c8cfd8c6c3c4cfcdd8c5dfda84c5d8cd">[email&#160;protected]</a></strong></p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s12">
+  <div class="section-num">12</div>
+  <h2 class="section-title">Advertising &amp; Social Media</h2>
+  <p><strong>Emberline does not serve advertising within its products.</strong> Emberline's platforms are ad-free by design and as a matter of brand commitment.</p>
+
+  <h4>Our Social Media Presence</h4>
+  <p>We maintain accounts on TikTok, Instagram, Pinterest, and other platforms to promote our products and share content. When you interact with our social media content:</p>
+  <ul>
+    <li>Each platform's own privacy policy governs how they use your data</li>
+    <li>We may see aggregate analytics about post performance but not individual user data beyond what you publicly share</li>
+    <li>Boosted/promoted posts on social platforms are labeled with "Paid Partnership" or "Sponsored" disclosures as required by each platform and the FTC</li>
+  </ul>
+
+  <h4>Paid Social Advertising — FTC Disclosures</h4>
+  <p>When we run paid advertising on social media, we comply with FTC Endorsement Guidelines (16 C.F.R. Part 255). All paid promotions include clear disclosures. We do not pay influencers or third parties to endorse our products without clear disclosure of that relationship.</p>
+
+  <h4>Children and Advertising</h4>
+  <p>We do not use behavioral advertising targeting toward children under 13 on any platform. On TikTok, we comply with TikTok's policies prohibiting behavioral advertising to users under 16. On Instagram/Meta, we comply with Meta's policies restricting advertising to minors.</p>
+
+  <h4>Remarketing / Retargeting</h4>
+  <p>We do not currently use website-based retargeting pixels that track users across third-party sites. If we implement this in the future, this policy will be updated and you will be given the opportunity to opt out via our cookie consent tool.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s13">
+  <div class="section-num">13</div>
+  <h2 class="section-title">Cookies &amp; Tracking Technologies</h2>
+  <p>We use cookies and similar technologies to operate our Services. You may manage your cookie preferences via our cookie consent banner.</p>
+  <table class="data-table">
+    <thead><tr><th>Cookie Type</th><th>Purpose</th><th>Can Opt Out</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Strictly Necessary</strong></td><td>Authentication session tokens, security (CSRF protection), remembering consent preferences</td><td>No — required for the service to function</td></tr>
+      <tr><td><strong>Functional</strong></td><td>Remembering your preferences (theme, reading position)</td><td>Yes</td></tr>
+      <tr><td><strong>Analytics</strong></td><td>Aggregate usage statistics to improve the Services (anonymized)</td><td>Yes</td></tr>
+      <tr><td><strong>Marketing</strong></td><td>Not used within the platform. Social media platforms may set cookies if you visit our social pages.</td><td>Yes — via each platform's settings</td></tr>
+    </tbody>
+  </table>
+  <p>Supabase sets session authentication cookies that are strictly necessary. These cannot be disabled without preventing login.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s14">
+  <div class="section-num">14</div>
+  <h2 class="section-title">Third-Party Services</h2>
+  <p>We use the following third-party service providers to operate our Services. Each has agreed to process your data only on our behalf and in accordance with our instructions:</p>
+  <table class="data-table">
+    <thead><tr><th>Provider</th><th>Service</th><th>Data Shared</th><th>Privacy Policy</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Supabase</strong></td><td>Database, authentication, file storage</td><td>Account data, content</td><td>supabase.com/privacy</td></tr>
+      <tr><td><strong>Stripe</strong></td><td>Payment processing</td><td>Payment card data (PCI DSS compliant)</td><td>stripe.com/privacy</td></tr>
+      <tr><td><strong>Resend</strong></td><td>Transactional email delivery</td><td>Email address, email content</td><td>resend.com/privacy</td></tr>
+      <tr><td><strong>Anthropic</strong></td><td>AI personalization features</td><td>Reading preferences, genre choices (not PII for children)</td><td>anthropic.com/privacy</td></tr>
+      <tr><td><strong>ElevenLabs</strong></td><td>Audiobook voice synthesis</td><td>Book text content only</td><td>elevenlabs.io/privacy</td></tr>
+      <tr><td><strong>Cloudflare</strong></td><td>DNS, CDN, DDoS protection</td><td>IP addresses, page requests</td><td>cloudflare.com/privacy</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s15">
+  <div class="section-num">15</div>
+  <h2 class="section-title">Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. When we make material changes:</p>
+  <ul>
+    <li>We will update the "Effective" date at the top of this document</li>
+    <li>We will notify registered users via email at least <strong>30 days</strong> before the change takes effect</li>
+    <li>For changes affecting children's data, we will obtain new parental consent where required by COPPA</li>
+    <li>Continued use of the Services after the effective date constitutes acceptance of the updated policy</li>
+  </ul>
+  <p>Prior versions of this policy are archived and available upon request.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="s16">
+  <div class="section-num">16</div>
+  <h2 class="section-title">Contact Us</h2>
+  <p>For privacy questions, requests, or concerns, contact our Privacy Officer:</p>
+  <div class="contact-box">
+    <h3 class="cb-title">Emberline Privacy Office</h3>
+    <div class="cb-row"><strong>Privacy Officer:</strong> <span
