@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terms of Service — Emberline Holdings Company LLC</title>
+<meta name="description" content="Emberline's Terms of Service governing use of the Reading Oasis, gallery, competitions, and all digital products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,100;1,9..144,300;0,9..144,100&family=Cormorant+Garamond:ital,wght@1,300;1,400;0,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#030402;--deep:#080C06;--bark:#1A200F;
+  --jade:#00D48A;--jade-l:#3DFFC0;
+  --ember:#D4720A;--ember-l:#FF9B3A;
+  --violet:#7C3AED;--gold:#C8A84B;
+  --p0:#F4EDD8;--p1:#D8CCAA;--p2:#9A8A68;--p3:#4A3E28;
+  --be:rgba(212,114,10,.13);--bel:rgba(212,114,10,.3);
+  --bj:rgba(0,212,138,.11);--bjl:rgba(0,212,138,.28);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--void);color:var(--p1);font-family:'Cormorant Garamond',serif;font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.7}
+::selection{background:rgba(0,212,138,.18);color:var(--p0)}
+::-webkit-scrollbar{width:2px}::-webkit-scrollbar-thumb{background:linear-gradient(var(--jade),var(--ember))}
+.site-wrap{max-width:820px;margin:0 auto;padding:0 2rem 8rem}
+header{border-bottom:1px solid var(--be);padding:2.2rem 0 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:4rem}
+.brand{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:1.15rem;color:var(--p0);text-decoration:none}
+.brand em{font-style:normal;color:var(--ember-l)}
+.back{font-family:'DM Mono',monospace;font-size:.43rem;letter-spacing:.18em;text-transform:uppercase;color:var(--p3);text-decoration:none;transition:color .25s}
+.back:hover{color:var(--ember-l)}
+.doc-hero{margin-bottom:3.5rem}
+.doc-eye{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ember-l);margin-bottom:.8rem}
+.doc-title{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:clamp(2.2rem,5.5vw,3.8rem);color:var(--p0);line-height:1.05;margin-bottom:1rem}
+.doc-meta{display:flex;gap:1.5rem;flex-wrap:wrap}
+.meta-chip{font-family:'DM Mono',monospace;font-size:.43rem;letter-spacing:.16em;text-transform:uppercase;padding:.28rem .75rem;border-radius:1px}
+.chip-v{background:rgba(212,114,10,.08);color:var(--ember-l);border:1px solid var(--be)}
+.chip-e{background:rgba(0,212,138,.08);color:var(--jade);border:1px solid var(--bj)}
+.chip-a{background:rgba(200,168,75,.08);color:var(--gold);border:1px solid rgba(200,168,75,.2)}
+.attorney-notice{background:linear-gradient(145deg,rgba(200,168,75,.07),rgba(200,168,75,.03));border:1px solid rgba(200,168,75,.2);border-radius:2px;padding:1.5rem 1.8rem;margin-bottom:3rem;position:relative;overflow:hidden}
+.attorney-notice::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,.4),transparent)}
+.an-label{font-family:'DM Mono',monospace;font-size:.44rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.an-text{font-size:.97rem;color:rgba(200,168,75,.7);line-height:1.9;font-style:italic}
+.key-terms{background:linear-gradient(145deg,rgba(212,114,10,.07),rgba(212,114,10,.03));border:1px solid var(--be);border-radius:2px;padding:2rem 2.2rem;margin-bottom:3.5rem;position:relative;overflow:hidden}
+.key-terms::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--ember),var(--ember-l),transparent)}
+.kt-title{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:1.3rem;color:var(--p0);margin-bottom:1rem}
+.kt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.6rem}
+.kt-item{font-size:.95rem;color:var(--p3);display:flex;gap:.5rem;align-items:flex-start;padding:.3rem 0}
+.kt-item::before{content:'→';color:var(--ember);font-size:.8rem;margin-top:.12rem;flex-shrink:0;font-family:'DM Mono',monospace;font-style:normal}
+.toc{background:linear-gradient(145deg,rgba(20,26,12,.8),rgba(10,14,7,.9));border:1px solid var(--be);border-radius:2px;padding:2rem 2.2rem;margin-bottom:4rem;position:relative;overflow:hidden}
+.toc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,114,10,.3),transparent)}
+.toc-title{font-family:'DM Mono',monospace;font-size:.46rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ember-l);margin-bottom:1.2rem}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:.3rem}
+.toc-link{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.97rem;color:var(--p3);text-decoration:none;padding:.28rem 0;transition:color .25s;display:flex;align-items:center;gap:.5rem}
+.toc-link::before{content:'✦';font-size:.42rem;color:var(--ember);opacity:.5;flex-shrink:0}
+.toc-link:hover{color:var(--ember-l)}
+@media(max-width:580px){.toc-grid,.kt-grid{grid-template-columns:1fr}}
+.section{margin-bottom:3.5rem;scroll-margin-top:2rem}
+.section-num{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:3rem;color:rgba(212,114,10,.1);line-height:1;margin-bottom:.2rem}
+.section-title{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:clamp(1.4rem,3vw,2rem);color:var(--p0);margin-bottom:1.2rem;padding-bottom:.7rem;border-bottom:1px solid var(--be)}
+.section p{font-size:1.02rem;color:var(--p2);line-height:2.05;margin-bottom:1rem}
+.section p:last-child{margin-bottom:0}
+.section ul,.section ol{margin:0 0 1.2rem 1.4rem}
+.section li{font-size:1rem;color:var(--p2);line-height:1.95;margin-bottom:.35rem}
+.section ul li::marker{color:var(--ember)}
+.section ol li::marker{color:var(--ember);font-family:'DM Mono',monospace;font-size:.85em}
+.section strong{color:var(--p1);font-weight:400;font-style:normal}
+.section h3{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:1.15rem;color:var(--p0);margin:2rem 0 .7rem}
+.section h4{font-family:'DM Mono',monospace;font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ember-l);margin:1.5rem 0 .6rem;font-style:normal;font-weight:400}
+.alert-box{border:1px solid var(--bel);border-radius:1px;padding:1.3rem 1.6rem;margin:1.5rem 0;background:rgba(212,114,10,.05);position:relative}
+.alert-box::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--ember)}
+.ab-label{font-family:'DM Mono',monospace;font-size:.44rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ember-l);margin-bottom:.4rem}
+.ab-text{font-size:.97rem;color:var(--p2);line-height:1.95}
+.dmca-box{background:linear-gradient(145deg,rgba(20,26,12,.85),rgba(10,14,7,.95));border:1px solid var(--bjl);border-radius:2px;padding:2.2rem 2.5rem;margin:1.5rem 0;position:relative;overflow:hidden}
+.dmca-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,138,.4),transparent)}
+.data-table{width:100%;border-collapse:collapse;margin:1.2rem 0}
+.data-table th{font-family:'DM Mono',monospace;font-size:.43rem;letter-spacing:.15em;text-transform:uppercase;color:var(--p3);text-align:left;padding:.7rem 1rem;border-bottom:1px solid var(--be);font-style:normal;font-weight:400}
+.data-table td{padding:.75rem 1rem;border-bottom:1px solid rgba(212,114,10,.05);font-size:.97rem;color:var(--p2);vertical-align:top}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,114,10,.1),rgba(0,212,138,.07),transparent);margin:3rem 0}
+.contact-box{background:linear-gradient(145deg,rgba(20,26,12,.85),rgba(10,14,7,.95));border:1px solid var(--bjl);border-radius:2px;padding:2.2rem 2.5rem;margin-top:3rem;position:relative;overflow:hidden}
+.contact-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,138,.4),transparent)}
+.cb-title{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:1.4rem;color:var(--p0);margin-bottom:1rem}
+.cb-row{display:flex;gap:.6rem;align-items:flex-start;margin-bottom:.6rem;font-size:.97rem;color:var(--p2)}
+.cb-row strong{color:var(--p1);font-weight:400;font-style:normal;min-width:160px;flex-shrink:0}
+.cb-row a{color:var(--jade);text-decoration:none}
+footer{border-top:1px solid var(--be);padding-top:2.5rem;margin-top:4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft-brand{font-family:'Fraunces',serif;font-style:italic;font-weight:100;font-size:1rem;color:var(--p0)}
+.ft-brand em{font-style:normal;color:var(--ember-l)}
+.ft-legal{font-family:'DM Mono',monospace;font-size:.42rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(154,138,104,.25);line-height:2;text-align:right}
+.ft-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.ft-link{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:var(--p3);text-decoration:none;transition:color .25s}
+.ft-link:hover{color:var(--ember-l)}
+</style>
+</head>
+<body>
+<div class="site-wrap">
+
+<header>
+  <a href="index.html" class="brand">Ember<em>line</em></a>
+  <a href="index.html" class="back">← Return to Oasis</a>
+</header>
+
+<div class="doc-hero">
+  <div class="doc-eye">Legal Document</div>
+  <h1 class="doc-title">Terms of Service</h1>
+  <div class="doc-meta">
+    <span class="meta-chip chip-v">Version 1.0</span>
+    <span class="meta-chip chip-e">Effective: March 28, 2026</span>
+    <span class="meta-chip chip-a">⚠ Pending Attorney Review</span>
+  </div>
+</div>
+
+<div class="attorney-notice">
+  <div class="an-label">⚠ Attorney Review Notice</div>
+  <div class="an-text">This document is a comprehensive draft prepared for attorney review. It is not yet in final legal force. Emberline Holdings Company LLC is seeking review by a licensed attorney prior to deployment.</div>
+</div>
+
+<div class="key-terms">
+  <div class="kt-title">Key Points</div>
+  <div class="kt-grid">
+    <div class="kt-item">You must be 13+ or have parental consent to use the Services</div>
+    <div class="kt-item">You own your content — we need a license to display it</div>
+    <div class="kt-item">We can remove content that violates our guidelines</div>
+    <div class="kt-item">Dispute resolution is in Wyoming; no class actions</div>
+    <div class="kt-item">We do not sell your data or serve ads within our platforms</div>
+    <div class="kt-item">Subscriptions auto-renew; cancel anytime before renewal</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <div class="toc-title">Contents</div>
+  <div class="toc-grid">
+    <a href="#t1" class="toc-link">1. Acceptance of Terms</a>
+    <a href="#t2" class="toc-link">2. Eligibility & Accounts</a>
+    <a href="#t3" class="toc-link">3. Services Description</a>
+    <a href="#t4" class="toc-link">4. User Content & License</a>
+    <a href="#t5" class="toc-link">5. DMCA / Copyright</a>
+    <a href="#t6" class="toc-link">6. Prohibited Conduct</a>
+    <a href="#t7" class="toc-link">7. Intellectual Property</a>
+    <a href="#t8" class="toc-link">8. Book Submissions</a>
+    <a href="#t9" class="toc-link">9. Subscriptions & Payments</a>
+    <a href="#t10" class="toc-link">10. Competitions & Prizes</a>
+    <a href="#t11" class="toc-link">11. Disclaimers</a>
+    <a href="#t12" class="toc-link">12. Limitation of Liability</a>
+    <a href="#t13" class="toc-link">13. Indemnification</a>
+    <a href="#t14" class="toc-link">14. Governing Law</a>
+    <a href="#t15" class="toc-link">15. Dispute Resolution</a>
+    <a href="#t16" class="toc-link">16. Changes to Terms</a>
+    <a href="#t17" class="toc-link">17. Contact</a>
+  </div>
+</nav>
+
+<!-- ═════ SECTIONS ═════════════════════════════════════ -->
+
+<div class="section" id="t1">
+  <div class="section-num">01</div>
+  <h2 class="section-title">Acceptance of Terms</h2>
+  <p>These Terms of Service ("Terms") constitute a legally binding agreement between you and <strong>Emberline Holdings Company LLC</strong>, a Wyoming Close Limited Liability Company ("Emberline," "we," "us," or "our"). By accessing or using any Emberline product or service — including the Emberline Reading Oasis, TMC Prep, IMAT Prep, Vent House, or any related website, application, or digital property (collectively, the "Services") — you agree to be bound by these Terms and our Privacy Policy, which is incorporated by reference.</p>
+  <p>If you do not agree to these Terms, do not access or use the Services.</p>
+  <div class="alert-box">
+    <div class="ab-label">For Parents and Guardians</div>
+    <div class="ab-text">If you are a parent or legal guardian allowing a minor to use the Services, you agree to these Terms on behalf of the minor and are responsible for the minor's use of the Services. Children under 13 may only use the Services with a parent or guardian account as required by our COPPA compliance policy.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t2">
+  <div class="section-num">02</div>
+  <h2 class="section-title">Eligibility &amp; Accounts</h2>
+
+  <h4>Age Requirements</h4>
+  <ul>
+    <li><strong>13 and older:</strong> May create an account independently</li>
+    <li><strong>Under 13:</strong> May only use the Services through a parent or guardian account with verifiable parental consent, as described in our Privacy Policy (COPPA Section)</li>
+    <li>By creating an account, you represent that you are at least 13, or that you are a parent or guardian creating an account for a child</li>
+  </ul>
+
+  <h4>Account Registration</h4>
+  <ul>
+    <li>You must provide accurate, complete, and current information during registration</li>
+    <li>You are responsible for maintaining the confidentiality of your account credentials</li>
+    <li>You are responsible for all activity that occurs under your account</li>
+    <li>You must notify us immediately at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3c4f494c4c534e487c59515e594e505552595b4e53494c12534e5b">[email&#160;protected]</a></strong> of any unauthorized use</li>
+    <li>You may not create more than one account, or create an account on behalf of another person without their authorization</li>
+    <li>We reserve the right to refuse account creation or terminate accounts at our discretion</li>
+  </ul>
+
+  <h4>Account Security</h4>
+  <p>You are solely responsible for all activity under your account. Emberline will not be liable for any loss resulting from unauthorized use of your account where you failed to maintain credential security.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t3">
+  <div class="section-num">03</div>
+  <h2 class="section-title">Services Description</h2>
+  <p>Emberline operates the following Services, each subject to these Terms:</p>
+  <table class="data-table">
+    <thead><tr><th>Service</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Reading Oasis</strong></td><td>A digital library and community platform for readers of all ages. Includes e-books, audiobooks, reading notes, personal shelves, and a community gallery.</td></tr>
+      <tr><td><strong>Emberline Gallery</strong></td><td>An artist community where users may upload and share original artwork, participate in competitions, and follow other artists.</td></tr>
+      <tr><td><strong>Emberline Press</strong></td><td>A newsletter and editorial publication featuring book announcements, competition results, and reading community news.</td></tr>
+      <tr><td><strong>TMC Prep</strong></td><td>A respiratory therapy certification exam preparation platform for licensed healthcare professionals.</td></tr>
+      <tr><td><strong>IMAT Prep</strong></td><td>A medical school entrance exam preparation platform for international students applying to Italian universities.</td></tr>
+      <tr><td><strong>Vent House™</strong></td><td>A private long-term mechanical ventilator care management platform. Governed by separate HIPAA-compliant terms for healthcare providers.</td></tr>
+    </tbody>
+  </table>
+  <p>We reserve the right to modify, suspend, or discontinue any Service at any time with reasonable notice. We are not liable for any such modification, suspension, or discontinuation.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t4">
+  <div class="section-num">04</div>
+  <h2 class="section-title">User Content &amp; License</h2>
+
+  <h4>Your Ownership</h4>
+  <p>You retain full ownership of all content you submit, upload, or share through the Services ("User Content"), including artwork, writing, reading notes, and profile information. These Terms do not transfer any ownership of your User Content to Emberline.</p>
+
+  <h4>License You Grant Emberline</h4>
+  <p>By submitting User Content to any Emberline Service, you grant Emberline a <strong>worldwide, non-exclusive, royalty-free, sublicensable, and transferable license</strong> to use, host, store, display, reproduce, modify (solely for formatting purposes), distribute, and create derivative works from your User Content, solely for the purpose of providing, operating, improving, and promoting the Services.</p>
+  <p>This license continues until you delete your User Content or close your account, subject to retention periods in our Privacy Policy.</p>
+
+  <h4>Your Representations About User Content</h4>
+  <p>By submitting User Content, you represent and warrant that:</p>
+  <ul>
+    <li>You own or have the necessary rights to submit the content</li>
+    <li>Your content does not infringe any third-party intellectual property rights</li>
+    <li>Your content does not violate applicable law or our Community Guidelines</li>
+    <li>You have obtained all necessary consents from identifiable persons in the content</li>
+  </ul>
+
+  <h4>Content Moderation</h4>
+  <p>We reserve the right (but not the obligation) to review, remove, or refuse any User Content for any reason, including violation of these Terms or Community Guidelines. We may, but are not required to, provide notice before removing content.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t5">
+  <div class="section-num">05</div>
+  <h2 class="section-title">DMCA / Copyright Infringement</h2>
+  <p>Emberline respects intellectual property rights and expects users to do the same. We comply with the <strong>Digital Millennium Copyright Act (DMCA), 17 U.S.C. § 512</strong>.</p>
+
+  <h4>Designated Copyright Agent</h4>
+  <div class="dmca-box">
+    <p><strong style="color:var(--jade)">DMCA Designated Agent</strong><br>
+    Caleb Littlejohn, Privacy &amp; Legal Officer<br>
+    Emberline Holdings Company LLC<br>
+    Email: <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f3b323c3e1f3a323d3a2d3336313a382d302a2f71302d38">[email&#160;protected]</a></strong><br>
+    <em style="font-size:.9rem;color:var(--p3)">Note: Formal DMCA agent registration with the U.S. Copyright Office (copyright.gov/dmca-agent) must be completed prior to launch — registration fee approximately $6.</em></p>
+  </div>
+
+  <h4>Filing a DMCA Takedown Notice</h4>
+  <p>If you believe content on our Services infringes your copyright, send a notice to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f3b323c3e1f3a323d3a2d3336313a382d302a2f71302d38">[email&#160;protected]</a> containing:</p>
+  <ol>
+    <li>Your physical or electronic signature (or that of your authorized agent)</li>
+    <li>Identification of the copyrighted work claimed to be infringed</li>
+    <li>Identification of the infringing material and its location on our Services</li>
+    <li>Your contact information (address, phone number, email)</li>
+    <li>A statement that you have a good-faith belief the use is not authorized</li>
+    <li>A statement that the information in the notice is accurate and, under penalty of perjury, that you are authorized to act on behalf of the copyright owner</li>
+  </ol>
+
+  <h4>DMCA Counter-Notification</h4>
+  <p>If you believe content was removed in error, you may submit a counter-notification to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4f2b222c2e0f2a222d2a3d2326212a283d203a3f61203d28">[email&#160;protected]</a>. We will follow the procedures set forth in 17 U.S.C. § 512(g).</p>
+
+  <h4>Repeat Infringers</h4>
+  <p>We maintain a policy of terminating accounts of users who are repeat copyright infringers in appropriate circumstances.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t6">
+  <div class="section-num">06</div>
+  <h2 class="section-title">Prohibited Conduct</h2>
+  <p>You agree not to use the Services to:</p>
+  <ul>
+    <li>Upload, post, or share content that violates applicable law or our Community Guidelines</li>
+    <li>Infringe any intellectual property rights of any person or entity</li>
+    <li>Upload sexual content of any kind, or content involving minors in a sexual or inappropriate context</li>
+    <li>Harass, bully, threaten, stalk, or intimidate any person</li>
+    <li>Impersonate any person or entity or misrepresent your affiliation</li>
+    <li>Use automated tools (bots, scrapers) to access the Services without our express written permission</li>
+    <li>Attempt to gain unauthorized access to any part of the Services, other accounts, or our systems</li>
+    <li>Distribute malware, viruses, or other harmful code</li>
+    <li>Engage in any activity that interferes with or disrupts the Services</li>
+    <li>Circumvent any access controls or technological protection measures</li>
+    <li>Collect or harvest personal information from other users without their consent</li>
+    <li>Use the Services for any commercial purpose not expressly permitted (e.g., advertising your own products within the platform without a partnership agreement)</li>
+    <li>Violate any applicable local, state, national, or international law or regulation</li>
+  </ul>
+  <p>Violation of these prohibitions may result in immediate account termination and, where warranted, referral to law enforcement.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t7">
+  <div class="section-num">07</div>
+  <h2 class="section-title">Emberline's Intellectual Property</h2>
+  <p>The Services and all content, features, and functionality thereof — including but not limited to text, graphics, logos, icons, images, audio, software code, UI design, the Emberline brand, the "Dr. Ventus™" character, book series titles, and the Emberline name — are owned by Emberline Holdings Company LLC or its content suppliers and are protected by U.S. and international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+  <p>You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any Emberline intellectual property without our express written consent, except:</p>
+  <ul>
+    <li>Your computer may temporarily store copies in RAM to access the Services</li>
+    <li>You may store files that are automatically cached by your browser for display enhancement</li>
+    <li>You may print or download one copy of a reasonable number of pages for personal, non-commercial use</li>
+  </ul>
+  <p><strong>"Dr. Ventus™"</strong> is a trademark of Emberline Holdings Company LLC. USPTO trademark application pending.</p>
+  <p><strong>"Emberline"</strong> and the Emberline logo are trademarks of Emberline Holdings Company LLC.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t8">
+  <div class="section-num">08</div>
+  <h2 class="section-title">Book Submissions</h2>
+  <p>Authors and publishers who submit manuscripts through our Book Submission Portal are subject to these additional terms in addition to our Community Guidelines:</p>
+  <ul>
+    <li><strong>No Exclusive License:</strong> Submitting a manuscript to Emberline does not grant us an exclusive license. You remain free to publish your work elsewhere. If approved, we will negotiate a non-exclusive digital publication license separately.</li>
+    <li><strong>No Guarantee of Publication:</strong> Submission does not guarantee acceptance or publication. All submissions are subject to editorial review.</li>
+    <li><strong>Rights Warranty:</strong> By submitting, you warrant that you own or have licensed all rights necessary for us to publish the work as described.</li>
+    <li><strong>AI Content Policy:</strong> Works generated entirely by AI without substantial human authorship are not eligible for the Emberline Library. AI-assisted works with significant human editorial direction may be considered at our discretion — please disclose AI tool usage in your submission.</li>
+    <li><strong>Compensation:</strong> Revenue sharing terms for accepted works will be set forth in a separate Author Agreement. Submission through the portal does not create any payment obligation.</li>
+  </ul>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t9">
+  <div class="section-num">09</div>
+  <h2 class="section-title">Subscriptions &amp; Payments</h2>
+
+  <h4>Free Access</h4>
+  <p>Book One of the Emberline children's series and basic platform access are provided free of charge to all registered users.</p>
+
+  <h4>Paid Subscriptions</h4>
+  <p>Certain features require a paid subscription ("Pro" or higher tiers). By subscribing:</p>
+  <ul>
+    <li>You authorize us to charge the payment method on file for the subscription fee</li>
+    <li>Subscriptions automatically renew at the end of each billing period unless cancelled</li>
+    <li>You may cancel at any time through your account settings; cancellation takes effect at the end of the current billing period</li>
+    <li>We do not provide refunds for partial subscription periods except where required by applicable law</li>
+  </ul>
+
+  <h4>Price Changes</h4>
+  <p>We will notify you at least <strong>30 days</strong> in advance of any subscription price increase. Continued use after the effective date of a price change constitutes acceptance of the new price.</p>
+
+  <h4>Payment Processing</h4>
+  <p>All payments are processed by <strong>Stripe, Inc.</strong> Your payment information is subject to Stripe's terms of service and privacy policy. We do not store full credit card numbers on our systems.</p>
+
+  <h4>Taxes</h4>
+  <p>Prices are exclusive of applicable taxes. You are responsible for all applicable taxes.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t10">
+  <div class="section-num">10</div>
+  <h2 class="section-title">Competitions &amp; Prizes</h2>
+  <p>Emberline may operate creative competitions (each a "Competition"). Each Competition is subject to its own Official Rules, which are posted alongside the competition and incorporated by reference.</p>
+  <ul>
+    <li><strong>Eligibility:</strong> Open to registered users unless otherwise stated. Employees of Emberline and their immediate family members are not eligible.</li>
+    <li><strong>Entry Ownership:</strong> You retain ownership of your entry. By entering, you grant Emberline a license to display your entry in connection with the Competition and on our platforms.</li>
+    <li><strong>Prize Delivery:</strong> Prizes will be delivered as described in the Official Rules. Cash prizes are reported to the IRS where required by law. Winners are responsible for all taxes on prizes received.</li>
+    <li><strong>Void Where Prohibited:</strong> Competitions are void where prohibited by applicable law.</li>
+    <li><strong>Age Restrictions:</strong> Competitions with cash prizes are open only to users aged 18 or older, or to minors with verifiable parental consent where permitted by applicable law.</li>
+  </ul>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t11">
+  <div class="section-num">11</div>
+  <h2 class="section-title">Disclaimers</h2>
+  <div class="alert-box">
+    <div class="ab-label">Important — Please Read</div>
+    <div class="ab-text">THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</div>
+  </div>
+  <p>Emberline does not warrant that:</p>
+  <ul>
+    <li>The Services will be uninterrupted, secure, or error-free</li>
+    <li>The results obtained from use of the Services will be accurate or reliable</li>
+    <li>Defects in the Services will be corrected</li>
+    <li>User-submitted content is accurate, appropriate, or non-infringing</li>
+  </ul>
+  <p><strong>Educational Content:</strong> Content on TMC Prep and IMAT Prep is for educational purposes only. It is not a substitute for official study materials, professional advice, or licensure requirements. Passing rates and outcomes cannot be guaranteed.</p>
+  <p><strong>Healthcare Content:</strong> Nothing on any Emberline platform constitutes medical advice. Vent House users are governed by separate clinical terms of service.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t12">
+  <div class="section-num">12</div>
+  <h2 class="section-title">Limitation of Liability</h2>
+  <div class="alert-box">
+    <div class="ab-label">Limitation of Liability</div>
+    <div class="ab-text">TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, EMBERLINE AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, LICENSORS, AND SERVICE PROVIDERS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, USE, OR GOODWILL, ARISING FROM YOUR USE OF OR INABILITY TO USE THE SERVICES.</div>
+  </div>
+  <p>In no event will Emberline's total liability to you for all claims arising from or related to these Terms or the Services exceed the greater of: (a) the amount you paid to Emberline in the 12 months preceding the claim, or (b) $100 USD.</p>
+  <p>Some jurisdictions do not allow the exclusion or limitation of certain damages, so the above limitation may not apply to you. In such jurisdictions, our liability is limited to the fullest extent permitted by applicable law.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t13">
+  <div class="section-num">13</div>
+  <h2 class="section-title">Indemnification</h2>
+  <p>You agree to defend, indemnify, and hold harmless Emberline Holdings Company LLC, and its officers, directors, employees, agents, licensors, and service providers from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to:</p>
+  <ul>
+    <li>Your violation of these Terms</li>
+    <li>Your User Content</li>
+    <li>Your use of the Services in violation of applicable law</li>
+    <li>Your violation of any third-party right, including any intellectual property or privacy right</li>
+  </ul>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t14">
+  <div class="section-num">14</div>
+  <h2 class="section-title">Governing Law</h2>
+  <p>These Terms and any dispute arising from them are governed by the laws of the <strong>State of Wyoming</strong>, without regard to its conflict of law provisions.</p>
+  <p>For users in jurisdictions that do not allow application of Wyoming law, the laws of your jurisdiction of residence apply to the extent required by applicable law.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t15">
+  <div class="section-num">15</div>
+  <h2 class="section-title">Dispute Resolution</h2>
+
+  <h4>Informal Resolution First</h4>
+  <p>Before initiating formal dispute proceedings, you agree to contact us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="49252c2e2825092c242b2c3b2520272c2e3b263c3967263b2e">[email&#160;protected]</a></strong> and provide a written description of the dispute and your requested resolution. We will respond within 30 days. Both parties agree to attempt informal resolution in good faith for 60 days before pursuing formal proceedings.</p>
+
+  <h4>Binding Arbitration</h4>
+  <p>If informal resolution fails, any dispute, claim, or controversy arising from or relating to these Terms or the Services shall be resolved by <strong>binding arbitration</strong> administered by the American Arbitration Association (AAA) under its Consumer Arbitration Rules, except as provided below.</p>
+  <p>The arbitration shall take place in <strong>Laramie, Wyoming</strong>, or via videoconference. The arbitrator's decision shall be final and binding and may be entered as a judgment in any court of competent jurisdiction.</p>
+
+  <h4>Class Action Waiver</h4>
+  <p><strong>YOU AND EMBERLINE AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING.</strong> If this class action waiver is found unenforceable, the entire arbitration agreement shall be void.</p>
+
+  <h4>Exceptions</h4>
+  <p>Either party may seek emergency injunctive or other equitable relief in any court of competent jurisdiction to prevent irreparable harm pending arbitration. You may also bring claims in small claims court where applicable.</p>
+
+  <h4>Opt-Out</h4>
+  <p>You may opt out of the arbitration agreement by sending written notice to <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4c20292b2d200c29212e293e202522292b3e23393c62233e2b">[email&#160;protected]</a></strong> within <strong>30 days</strong> of first accepting these Terms. Your notice must include your name, email, and a statement that you opt out of arbitration.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t16">
+  <div class="section-num">16</div>
+  <h2 class="section-title">Changes to These Terms</h2>
+  <p>We reserve the right to modify these Terms at any time. When we make material changes:</p>
+  <ul>
+    <li>We will post the updated Terms with a new "Effective" date</li>
+    <li>We will notify registered users via email at least <strong>30 days</strong> before the changes take effect</li>
+    <li>Continued use of the Services after the effective date constitutes acceptance</li>
+    <li>If you do not agree to the modified Terms, you must stop using the Services</li>
+  </ul>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="t17">
+  <div class="section-num">17</div>
+  <h2 class="section-title">Contact</h2>
+  <p>For questions about these Terms:</p>
+  <div class="contact-box">
+    <h3 class="cb-title">Emberline Legal</h3>
+    <div class="cb-row"><strong>General Legal:</strong> <a href="/cdn-cgi/l/email-protection#076b6260666b47626a6562756b6e6962607568727729687560"><span class="__cf_email__" data-cfemail="b5d9d0d2d4d9f5d0d8d7d0c7d9dcdbd0d2c7dac0c59bdac7d2">[email&#160;protected]</span></a></div>
+    <div class="cb-row"><strong>DMCA Agent:</strong> <a href="/cdn-cgi/l/email-protection#c6a2aba5a786a3aba4a3b
